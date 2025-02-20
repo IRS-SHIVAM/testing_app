@@ -1,0 +1,163 @@
+/* .machineImg{
+    width: 550px;
+}
+
+.container .img1{
+    position: absolute;
+    margin-top:150px;
+    margin-left: -150px;
+    animation-name: throwBottal2;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.container .img2{
+    position: absolute;
+    margin-top:150px;
+    margin-left: -100px;
+    animation-name: throwBottal1;
+    animation-duration: 2.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    rotate: 30deg;
+}
+
+@keyframes throwBottal1{
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 270deg;
+        margin-top: 210px;
+        margin-left: -70px;
+        display: none;
+    }
+}
+
+@keyframes throwBottal2{
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 460deg;
+        margin-top: 210px;
+        display: none;
+    }
+}
+
+.imgRoll1{
+    position: absolute;
+    left: 50px;
+    top: 165px;
+    animation: rollImg1 4s infinite;
+    animation-duration: 5s;
+    visibility: visible;
+}
+.imgRoll2{
+    position: absolute;
+    left: 50px;
+    top: 165px;
+    animation: rollImg2 4s infinite;
+    animation-duration: 5s;
+    visibility: visible;
+    animation-delay: 2s;
+}
+
+@keyframes rollImg1{
+    0%{
+        left:50px;
+        top: 165px;
+        rotate: 0deg;
+        visibility: visible;
+    }
+    25%{
+        left: 160px;
+        top: 165px;
+        visibility: hidden;
+        rotate: 0deg;
+    }
+    50%{
+        left: 250px;
+        top: 165px;
+        visibility: hidden;
+        rotate: 0deg;
+    }
+    75%{
+        left : 365px;
+        top: 165px;
+        rotate: 0deg;
+        visibility: visible;
+    }
+    100%{
+        left : 390px;
+        top:235px;
+        visibility: visible;
+        rotate: 460deg;
+    }
+}
+
+@keyframes rollImg2{
+    0%{
+        left:50px;
+        top: 165px;
+        rotate: 0deg;
+        visibility: visible;
+    }
+    25%{
+        left: 160px;
+        top: 165px;
+        visibility: hidden;
+        rotate: 0deg;
+    }
+    50%{
+        left: 250px;
+        top: 165px;
+        visibility: hidden;
+        rotate: 0deg;
+    }
+    75%{
+        left : 360px;
+        top: 165px;
+        rotate: 0deg;
+        visibility: visible;
+    }
+    100%{
+        left : 460px;
+        top:235px;
+        visibility: visible;
+        rotate: 460deg;
+    }
+}
+
+.containner{
+    width: 80%;
+    margin-left: 300px;
+    height: 500px;
+    display: flex;
+    background-color: gainsboro;
+    justify-content: center;
+    align-items: center;
+} */
+
+.containner{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: gainsboro;
+}
+
+.containner .navbar{
+    width: 260px;
+    background-color: rgb(21, 21, 44);
+}
+.containner .imgContainner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+.containner .imgContainner .suka{
+    background-color: aqua;
+    width: 1500px;
+}
