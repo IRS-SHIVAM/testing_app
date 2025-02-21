@@ -342,3 +342,20 @@
         border-radius: 30px 0px 0px 0px;
     }
 }
+
+.CPU{
+    background-color: aqua;
+    width: 11%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-left: 113px;
+    margin-top: 364px;
+    position: absolute;
+}
+
+.CPU img{
+    height: 40px;
+}
