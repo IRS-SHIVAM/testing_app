@@ -14,8 +14,15 @@
     <img src="assets/suka.png" alt="abc" class="suka">
     <img src="/assets/img1.png" alt="imgRoll" height="75px" class="imgRoll1" />
     <img src="/assets/img2.png" alt="imgRoll" height="75px" class="imgRoll2" />
-    <div class="ejectCount">845622</div>
-    <div class="ignoreCount">9682365</div>
-
+    <div class="ejectCount">{{ ejectedCount }}</div>
+    <div class="ignoreCount">{{ rejectedCount }}</div>
+    <div class="cpuTemperature">
+      <div>{{ cpuTemperature }}&deg;C</div>
+      <div class="cpuText">CPU Temp</div>
+    </div>
+    <div class="gpuTemperature">
+      <div>{{ gpuTemperature }}&deg;C</div>
+      <div class="gpuText">GPU Temp</div> 
+    </div>
   </div>
 </div>
