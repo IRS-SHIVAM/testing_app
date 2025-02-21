@@ -323,8 +323,8 @@
         height: 30px;
         left:20px;
         top: 83px;
-        animation-delay: 2s;
         animation: rollImg2res3 7s infinite;
+        animation-delay: 2s;
         visibility: hidden;
     }
     .ejectCount{
