@@ -40,6 +40,19 @@
     border-radius: 60px 0px 0px 0px;
     /* border-bottom: 6px solid rgb(80, 79, 79); */
 }
+.cpuTemp{
+    background-color: aqua;
+    width: 10%;
+    height: 20%;
+    position: absolute;
+    top: 365px;
+    left: 117px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 @keyframes rollImg1res1{
     0%{
@@ -268,6 +281,13 @@
         /* background-color: red; */
         width: 700px;
     }
+    .cpuTemp{
+        width: 10%;
+        height: 20%;
+        top: 255px;
+        left: 83px;
+    }
+    
     .imgRoll1{
         left: 40px;
         top : 165px;
@@ -302,12 +322,25 @@
     .containner .navbar{
         display: none;
     }
+    .cpuTemp{
+        width: 10%;
+        height: 20%;
+        top: 255px;
+        left: 83px;
+    }
+    
 }
 
 @media screen and (max-width : 700px) {
     .containner .imgContainner .suka{
         /* background-color: yellow; */
         width: 400px;
+    }
+    .cpuTemp{
+        width: 10%;
+        height: 20%;
+        top: 145px;
+        left: 47px;
     }
     .containner .navbar{
         display: none;
@@ -343,19 +376,4 @@
     }
 }
 
-.CPU{
-    background-color: aqua;
-    width: 11%;
-    height: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    margin-left: 113px;
-    margin-top: 364px;
-    position: absolute;
-}
 
-.CPU img{
-    height: 40px;
-}
