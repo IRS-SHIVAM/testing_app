@@ -13,63 +13,64 @@
       </div>
       <div class="machineSessionInfo">
         <div>
-          <!-- <img src="/assets/logo/sessionCount.png" alt="sessionCount" class=""/> -->
+          <img src="/assets/logo/sessionCount.png" alt="sessionCount" class=""/>
           sessionCount : {{ serverData.sessionCount }}
         </div>
         <div>
-          <!-- <img src="/assets/logo/sessionDateTime.png" alt="sessionDateTime" /> -->
+          <img src="/assets/logo/sessionDateTime.png" alt="sessionDateTime" />
           {{ serverData.sDate + " " + serverData.sTime }}
         </div>
         <div>
-          <!-- <img src="/assets/logo/efficiency.png" alt="efficiency" /> -->
+          <img src="/assets/logo/efficiency.png" alt="efficiency" />
           efficiency : {{ serverData.Efficiency + "%"}}
         </div>
         <div>
-          <!-- <img src="/assets/logo/recipe.png" alt="recipe" /> -->
+          <img src="/assets/logo/recipe.png" alt="recipe" />
           recipe : {{ serverData.selectedRecipe }}
         </div>
       </div>
     </div>
-  
-  <div class="imgContainner">
-      <img src="assets/images/suka.png" alt="abc" class="suka" >
-    <img src="/assets/images/img1.png" alt="imgRoll" height="75px" class="imgRoll1" />
-    <img src="/assets/images/img2.png" alt="imgRoll" height="75px" class="imgRoll2" />
-    <img src="/assets/images/img3.png" alt="imgRoll" height="75px" class="imgRoll3" />
-    <img src="/assets/images/img4.png" alt="imgRoll" height="75px" class="imgRoll4" />
 
-    <!-- <img src="/assets/img3.png" alt="imgRoll" height="75px" class="imgRoll3" /> -->
-    <div class="ejectCount">{{ ejectedCount }}</div>
-    <div class="ignoreCount">{{ rejectedCount }}</div>
-    <div class="cpuTemperature">
-      <div>{{ cpuTemperature }}&deg;C</div>
-      <div class="cpuText">CPU Temp</div>
+    <div class="imgContainner">
+      <img src="assets/images/suka.png" alt="abc" class="suka">
+      <img src="/assets/images/img1.png" alt="imgRoll" height="75px" class="imgRoll1" />
+      <img src="/assets/images/img2.png" alt="imgRoll" height="75px" class="imgRoll2" />
+      <img src="/assets/images/img3.png" alt="imgRoll" height="75px" class="imgRoll3" />
+      <img src="/assets/images/img4.png" alt="imgRoll" height="75px" class="imgRoll4" />
+
+      <!-- <img src="/assets/img3.png" alt="imgRoll" height="75px" class="imgRoll3" /> -->
+      <div class="ejectCount">{{ ejectedCount }}</div>
+      <div class="ignoreCount">{{ rejectedCount }}</div>
+      <div class="cpuTemperature">
+        <div>{{ cpuTemperature }}&deg;C</div>
+        <div class="cpuText">CPU Temp</div>
+      </div>
+      <div class="gpuTemperature">
+        <div>{{ gpuTemperature }}&deg;C</div>
+        <div class="gpuText">GPU Temp</div>
+      </div>
     </div>
-    <div class="gpuTemperature">
-      <div>{{ gpuTemperature }}&deg;C</div>
-      <div class="gpuText">GPU Temp</div>
+
+    <div class="machineLog">
+      <table>
+        <tr>
+          <th>errorCode</th>
+          <th>message</th>
+          <th>Frequency</th>
+          <th>errorTime</th>
+          <th>errorCause</th>
+          <th>errorRemedy</th>
+        </tr>
+        <tr *ngFor="let error of serverData.log">
+          <td>{{ error.errorCode }}</td>
+          <td>{{ error.message }}</td>
+          <td>{{ error.errorFrequency }}</td>
+          <td>{{ error.errorTime }}</td>
+          <td>{{ error.errorCause }}</td>
+          <td>{{ error.errorRemedy }}</td>
+
+        </tr>
+      </table>
     </div>
   </div>
-  <div class="machineLog">
-    <table>
-      <tr>
-        <th>errorCode</th>
-        <th>message</th>
-        <th>errorFrequencyv</th>
-        <th>errorTime</th>
-        <th>errorCause</th>
-        <th>errorRemedy</th>
-      </tr>
-      <tr *ngFor="let error of serverData.log">
-        <td>{{ error.errorCode }}</td>
-        <td>{{ error.message }}</td>
-        <td>{{ error.errorFrequency }}</td>
-        <td>{{ error.errorTime }}</td>
-        <td>{{ error.errorCause }}</td>
-        <td>{{ error.errorRemedy }}</td>
-
-      </tr>
-    </table>
-  </div>
-</div>
 </div>

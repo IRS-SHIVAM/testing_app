@@ -31,6 +31,46 @@ export class AppComponent {
       "errorTime": "2025-02-19 14:11:03",
       "errorCause": "Air Pressure might have gone below 4.5 bar",
       "errorRemedy": "Check the pressure from compressor unit,Check the shut off valve in ON position"
+    },
+    {
+      "errorCode": 1002,
+      "message": "Pressure low",
+      "errorFrequency": 2,
+      "errorTime": "2025-02-19 14:11:03",
+      "errorCause": "Air Pressure might have gone below 4.5 bar",
+      "errorRemedy": "Check the pressure from compressor unit,Check the shut off valve in ON position"
+    },
+    {
+      "errorCode": 1002,
+      "message": "Pressure low",
+      "errorFrequency": 2,
+      "errorTime": "2025-02-19 14:11:03",
+      "errorCause": "Air Pressure might have gone below 4.5 bar",
+      "errorRemedy": "Check the pressure from compressor unit,Check the shut off valve in ON position"
+    },
+    {
+      "errorCode": 1002,
+      "message": "Pressure low",
+      "errorFrequency": 2,
+      "errorTime": "2025-02-19 14:11:03",
+      "errorCause": "Air Pressure might have gone below 4.5 bar",
+      "errorRemedy": "Check the pressure from compressor unit,Check the shut off valve in ON position"
+    },
+    {
+      "errorCode": 1002,
+      "message": "Pressure low",
+      "errorFrequency": 2,
+      "errorTime": "2025-02-19 14:11:03",
+      "errorCause": "Air Pressure might have gone below 4.5 bar",
+      "errorRemedy": "Check the pressure from compressor unit,Check the shut off valve in ON position"
+    },
+    {
+      "errorCode": 1002,
+      "message": "Pressure low",
+      "errorFrequency": 2,
+      "errorTime": "2025-02-19 14:11:03",
+      "errorCause": "Air Pressure might have gone below 4.5 bar",
+      "errorRemedy": "Check the pressure from compressor unit,Check the shut off valve in ON position"
     }]
   }
 
