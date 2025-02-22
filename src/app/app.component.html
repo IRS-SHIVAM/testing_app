@@ -1,28 +1,24 @@
-<h1 align="center">{{ title }}</h1>
-
-<!-- <div #imgContainer class="container">
-  <img src="/assets/suka.png" alt="suka" class="machineImg">
-
-  <img src="/assets/img1.png" alt="imgRoll" height="30px" class="imgRoll1" />
-  <img src="/assets/img2.png" alt="imgRoll" height="30px" class="imgRoll2" />
-</div>
-<button (click)="increaseCount()">Count + 10</button> -->
+<h1 align="center">{{ title }}</h1> 
 
 <div class="containner">
   <div class="navbar"></div>
-  <div class="imgContainner">
-    <img src="assets/suka.png" alt="abc" class="suka">
-    <img src="/assets/img1.png" alt="imgRoll" height="75px" class="imgRoll1" />
-    <img src="/assets/img2.png" alt="imgRoll" height="75px" class="imgRoll2" />
-    <div class="ejectCount">{{ ejectedCount }}</div>
-    <div class="ignoreCount">{{ rejectedCount }}</div>
-    <div class="cpuTemperature">
-      <div>{{ cpuTemperature }}&deg;C</div>
-      <div class="cpuText">CPU Temp</div>
+    <div class="imgContainner">
+      <img src="assets/images/suka.png" alt="abc" class="suka">
+      <img src="/assets/images/img1.png" alt="imgRoll" height="75px" class="imgRoll1" />
+      <img src="/assets/images/img2.png" alt="imgRoll" height="75px" class="imgRoll2" />
+      <img src="/assets/images/img3.png" alt="imgRoll" height="75px" class="imgRoll3" />
+      <img src="/assets/images/img4.png" alt="imgRoll" height="75px" class="imgRoll4" />
+
+      <!-- <img src="/assets/img3.png" alt="imgRoll" height="75px" class="imgRoll3" /> -->
+      <div class="ejectCount">{{ ejectedCount }}</div>
+      <div class="ignoreCount">{{ rejectedCount }}</div>
+      <div class="cpuTemperature">
+        <div>{{ cpuTemperature }}&deg;C</div>
+        <div class="cpuText">CPU Temp</div>
+      </div>
+      <div class="gpuTemperature">
+        <div>{{ gpuTemperature }}&deg;C</div>
+        <div class="gpuText">GPU Temp</div>
+      </div>
     </div>
-    <div class="gpuTemperature">
-      <div>{{ gpuTemperature }}&deg;C</div>
-      <div class="gpuText">GPU Temp</div> 
-    </div>
-  </div>
 </div>

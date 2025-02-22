@@ -1,4 +1,4 @@
-.imgRoll1{
+.imgRoll1 , .imgRoll3{
     position: absolute;
     left:700px;
     top: 240px;
@@ -6,14 +6,21 @@
     animation-duration: 7s;
     visibility: hidden;
 }
-.imgRoll2{
+.imgRoll2 , .imgRoll4{
     position: absolute;
     left:55px;
     top: 240px;
     animation: rollImg2res1 7s infinite;
     animation-duration: 7s;
     visibility: hidden;
-    animation-delay: 2s;
+    animation-delay:1.7s ;
+}
+.imgRoll3{
+    animation-delay: 3.3s;
+}
+.imgRoll4{
+    animation-delay: 4.8s;
+    scale: .8;
 }
 .ejectCount{
     background-color: gainsboro;
@@ -286,25 +293,32 @@
     width: 1000px;
 }
 
+
 @media screen and (max-width : 1300px) {
     .containner .imgContainner .suka{
         /* background-color: red; */
         width: 700px;
     }
-    .imgRoll1{
+    .imgRoll1 , .imgRoll3{
         left: 40px;
         top : 165px;
         height: 50px;
         animation: rollImg1res2 7s infinite;
         visibility: hidden;
     }
-    .imgRoll2{
+    .imgRoll2 , .imgRoll4{
         left: 40px;
         top : 165px;
         height: 50px;
         animation: rollImg2res2 7s infinite;
-        animation-delay: 2s;
+        animation-delay: 1.7s;
         visibility: hidden;
+    }
+    .imgRoll3{
+        animation-delay: 3.3s;
+    }
+    .imgRoll4{
+        animation-delay: 4.8s;
     }
     .ejectCount{
         left : 490px;
@@ -347,20 +361,26 @@
     .containner .navbar{
         display: none;
     }
-    .imgRoll1{
+    .imgRoll1 , .imgRoll3{
         height: 30px;
         left:20px;
         top: 83px;
         animation: rollImg1res3 7s infinite;
         visibility: hidden;
     }
-    .imgRoll2{
+    .imgRoll2 , .imgRoll4{
         height: 30px;
         left:20px;
         top: 83px;
         animation: rollImg2res3 7s infinite;
-        animation-delay: 2s;
+        animation-delay: 1.7s;
         visibility: hidden;
+    }
+    .imgRoll3{
+        animation-delay: 3.3s;
+    }
+    .imgRoll4{
+        animation-delay: 4.8s;
     }
     .ejectCount{
         left : 280px;

@@ -1,4 +1,4 @@
-import { Component, ElementRef ,ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,21 +8,21 @@ import { Component, ElementRef ,ViewChild } from '@angular/core';
 export class AppComponent {
 
   title = 'portal';
-  ejectedCount:number = 45126;
-  rejectedCount:number = 124587;
-  gpuTemperature:number = 65 ;
-  cpuTemperature:number = 62 ;
+  ejectedCount: number = 45126;
+  rejectedCount: number = 124587;
+  gpuTemperature: number = 65;
+  cpuTemperature: number = 62;
 
-  constructor(){
-    setInterval(()=>{
+  constructor() {
+    setInterval(() => {
       this.updateEjectedValues();
       this.updateRejectedValues();
-    },400);
+    }, 400);
   }
-  updateEjectedValues(){
-    this.ejectedCount += Math.floor(Math.random() * 10); 
+  updateEjectedValues() {
+    this.ejectedCount += Math.floor(Math.random() * 10);
   }
-  updateRejectedValues(){
-    this.rejectedCount += Math.floor(Math.random() * 10); 
+  updateRejectedValues() {
+    this.rejectedCount += Math.floor(Math.random() * 10);
   }
 }
