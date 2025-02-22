@@ -1,7 +1,36 @@
-<h1 align="center">{{ title }}</h1> 
-
 <div class="containner">
   <div class="navbar"></div>
+
+  <div class="machineDetails">
+    <div class="machineName">
+      <h4>{{ serverData.deviceId }}</h4>
+    </div>
+
+    <div class="machineInfo">
+      <div class="machineImg">
+        <img src="/assets/images/machine.webp" alt="machine">
+        <h4 [ngClass]="machineRunning ? 'machineRunning' : 'machineStop'">Running</h4>
+      </div>
+      <div class="machineSessionInfo">
+        <div>
+          <img src="/assets/logo/sessionCount.png" alt="sessionCount" class=""/>
+          sessionCount : {{ serverData.sessionCount }}
+        </div>
+        <div>
+          <img src="/assets/logo/sessionDateTime.png" alt="sessionDateTime" />
+          {{ serverData.sDate + " " + serverData.sTime }}
+        </div>
+        <div>
+          <img src="/assets/logo/efficiency.png" alt="efficiency" />
+          efficiency : {{ serverData.Efficiency + "%"}}
+        </div>
+        <div>
+          <img src="/assets/logo/recipe.png" alt="recipe" />
+          recipe : {{ serverData.selectedRecipe }}
+        </div>
+      </div>
+    </div>
+
     <div class="imgContainner">
       <img src="assets/images/suka.png" alt="abc" class="suka">
       <img src="/assets/images/img1.png" alt="imgRoll" height="75px" class="imgRoll1" />
@@ -21,4 +50,27 @@
         <div class="gpuText">GPU Temp</div>
       </div>
     </div>
+
+    <div class="machineLog">
+      <table>
+        <tr>
+          <th>errorCode</th>
+          <th>message</th>
+          <th>Frequency</th>
+          <th>errorTime</th>
+          <th>errorCause</th>
+          <th>errorRemedy</th>
+        </tr>
+        <tr *ngFor="let error of serverData.log">
+          <td>{{ error.errorCode }}</td>
+          <td>{{ error.message }}</td>
+          <td>{{ error.errorFrequency }}</td>
+          <td>{{ error.errorTime }}</td>
+          <td>{{ error.errorCause }}</td>
+          <td>{{ error.errorRemedy }}</td>
+
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
