@@ -285,6 +285,9 @@
     height: 100vh;
     background-color: rgb(21, 21, 44);
     position: fixed;
+    text-align: center;
+    color: white;
+    padding-top: 250px;
     top: 0px;
     left: 0px;
 }
@@ -302,6 +305,7 @@
 .containner .imgContainner .suka{
     /* background-color: aqua; */
     width: 1000px;
+    background-color: #1B2531;
 }
 .containner .machineDetails{
     margin-left:260px;
@@ -384,6 +388,30 @@
 .containner .machineDetails .machineLog{
     overflow-x: scroll;
 }
+.gpuText , .cpuText , .speedText , .motorText{
+    font-size: 13px;
+}
+.conveyorSpeed{
+    /* background-color: #1B2531; */
+    width: fit-content;
+    font-size: small;
+    position: absolute;
+    left:20px;
+    top: 200px;
+    height: 30px;
+    color: white;
+    text-align: center;
+}
+.motorAmpere{
+    width: fit-content;
+    font-size: small;
+    position: absolute;
+    left:400px;
+    top: 100px;
+    height: 30px;
+    color: white;
+    text-align: center;
+}
 
 @media screen and (max-width : 1300px) {
     .containner .imgContainner .suka{
@@ -429,6 +457,7 @@
         left: 158px;
         height: 65px;
         width: 97px;
+        font-size: 5px;
     }
     .cpuTemperature{
         top: 255px;
@@ -438,6 +467,15 @@
     }
     .containner .machineDetails{
         width: 100%;
+    }
+    .conveyorSpeed{
+        left: -10px;
+        top: 120px;
+    }
+    .motorAmpere{
+        left: 265px;
+        top: 55px;
+        text-align: center;
     }
 }
 
@@ -505,10 +543,7 @@
         height: 37px;
         width: 55px;
     }
-    .gpuText{
-        display: none;
-    }
-    .cpuText{
+    .gpuText , .cpuText , .speedText , .motorText{
         display: none;
     }
     .containner .machineDetails {
@@ -517,4 +552,39 @@
     .containner .machineDetails .machineInfo{
         flex-direction: column;
     }
+    .conveyorSpeed{
+        left: -15px;
+        top: 75px;
+    }
+    .motorAmpere{
+        left: 150px;
+        top: 32px;
+    }
 }
+
+/* .box{
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+    background-image: conic-gradient(red 64% , black 0%);
+    border-radius: 50%;
+    margin-left: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    rotate: 180deg;
+}
+.innerBox{
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    rotate: -180deg;
+} */

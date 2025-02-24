@@ -24,6 +24,8 @@ export class AppComponent {
     "selectedRecipe": "Recipe_1",
     "sDate": "2025-02-19",
     "sTime": "15:55:00",
+    "conveyorSpeed": 3.21,
+    "motorAmpere": 5.19,
     "log": [{
       "errorCode": 1002,
       "message": "Pressure low",
