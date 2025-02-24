@@ -381,6 +381,9 @@
     text-align: center;
     padding: 5px;
 }
+.containner .machineDetails .machineLog{
+    overflow-x: scroll;
+}
 
 @media screen and (max-width : 1300px) {
     .containner .imgContainner .suka{
@@ -442,8 +445,8 @@
     .containner .navbar{
         display: none;
     }
-    .containner .machineDetails .machineLog {
-        overflow-x : scroll;
+    .containner .machineDetails {
+        margin-left: 0px;
     }
 }
 
@@ -508,8 +511,8 @@
     .cpuText{
         display: none;
     }
-    .containner .machineDetails .machineLog{
-        overflow-x : scroll;
+    .containner .machineDetails {
+        margin-left: 0px;
     }
     .containner .machineDetails .machineInfo{
         flex-direction: column;
