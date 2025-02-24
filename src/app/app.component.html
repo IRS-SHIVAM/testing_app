@@ -15,7 +15,7 @@
       </div>
       <div class="machineSessionInfo">
         <div>
-          <img src="/assets/logo/sessionCount.png" alt="sessionCount" class=""/>
+          <img src="/assets/logo/sessionCount.png" alt="sessionCount"/>
           sessionCount : {{ serverData.sessionCount }}
         </div>
         <div>
@@ -34,11 +34,11 @@
     </div>
 
     <div class="imgContainner">
-      <img src="assets/images/suka.png" alt="abc" class="suka">
-      <img src="/assets/images/img1.png" alt="imgRoll" height="75px" class="imgRoll1" />
-      <img src="/assets/images/img2.png" alt="imgRoll" height="75px" class="imgRoll2" />
-      <img src="/assets/images/img3.png" alt="imgRoll" height="75px" class="imgRoll3" />
-      <img src="/assets/images/img4.png" alt="imgRoll" height="75px" class="imgRoll4" />
+      <img src="assets/images/suka3.png" alt="abc" class="suka">
+      <img src="/assets/images/img1.png" alt="imgRoll" height="95px" class="imgRoll1" />
+      <img src="/assets/images/img2.png" alt="imgRoll" height="95px" class="imgRoll2" />
+      <img src="/assets/images/img3.png" alt="imgRoll" height="95px" class="imgRoll3" />
+      <img src="/assets/images/img4.png" alt="imgRoll" height="95px" class="imgRoll4" />
 
       <!-- <img src="/assets/img3.png" alt="imgRoll" height="75px" class="imgRoll3" /> -->
       <div class="ejectCount">{{ ejectedCount }}</div>
@@ -52,12 +52,16 @@
         <div class="gpuText">GPU Temp</div>
       </div>
       <div class="conveyorSpeed">
-        <div>{{ serverData.conveyorSpeed }} m/s</div>
+        <div>{{ conveyorSpeed }} m/s</div>
         <div class="speedText">Conveyor Speed</div>
       </div>
       <div class="motorAmpere" >
-        <div>{{ serverData.motorAmpere }} A</div>
+        <div>{{ motorAmpere }} A</div>
         <div class="motorText">Motor Ampere</div>
+      </div>
+      <div class="visionTemperature">
+        <div>{{visionTemperature }}&deg;C</div>
+        <div class="visionText">Vision Temperature</div>
       </div>
     </div>
 
