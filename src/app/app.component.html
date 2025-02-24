@@ -1,5 +1,7 @@
 <div class="containner">
-  <div class="navbar"></div>
+  <div class="navbar">
+    <h1>Navbar</h1>
+  </div>
 
   <div class="machineDetails">
     <div class="machineName">
@@ -49,6 +51,14 @@
         <div>{{ gpuTemperature }}&deg;C</div>
         <div class="gpuText">GPU Temp</div>
       </div>
+      <div class="conveyorSpeed">
+        <div>{{ serverData.conveyorSpeed }} m/s</div>
+        <div class="speedText">Conveyor Speed</div>
+      </div>
+      <div class="motorAmpere" >
+        <div>{{ serverData.motorAmpere }} A</div>
+        <div class="motorText">Motor Ampere</div>
+      </div>
     </div>
 
     <div class="machineLog">
@@ -73,4 +83,11 @@
       </table>
     </div>
   </div>
+
 </div>
+<!-- <div class="box">
+  <div class="innerBox">
+    <div>64&deg;C</div>
+    <div>CPU</div>
+  </div>
+</div> -->
