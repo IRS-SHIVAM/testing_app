@@ -365,6 +365,14 @@
 .containner .machineDetails .machineLog{
     overflow-x: scroll;
 }
+.machineLogHeading{
+    margin: 10px;
+    background-color: #283142;
+    text-align: center;
+    padding: 15px 0px;
+    color: white;
+    border-radius: 5px;
+}
 
 @media screen and (max-width : 1300px) {
     .containner .imgContainner .suka{
