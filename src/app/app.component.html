@@ -35,51 +35,60 @@
     </div> -->
 
     <div class="imgContainner">
-      <img src="assets/images/suka3.png" alt="abc" class="suka">
-      <img src="/assets/images/img1.png" alt="imgRoll" height="95px" class="imgRoll1" />
-      <img src="/assets/images/img2.png" alt="imgRoll" height="95px" class="imgRoll2" />
-      <img src="/assets/images/img3.png" alt="imgRoll" height="95px" class="imgRoll3" />
-      <img src="/assets/images/img4.png" alt="imgRoll" height="95px" class="imgRoll4" />
+      <img src="assets/images/suka3.png" alt="abc" class="suka" loading="lazy" />
+      <img src="/assets/images/img1.png" alt="imgRoll" height="95px" class="imgRoll1" loading="lazy" />
+      <img src="/assets/images/img2.png" alt="imgRoll" height="95px" class="imgRoll2" loading="lazy" />
+      <img src="/assets/images/img3.png" alt="imgRoll" height="95px" class="imgRoll3" loading="lazy" />
+      <img src="/assets/images/img4.png" alt="imgRoll" height="95px" class="imgRoll4" loading="lazy" />
 
       <!-- <img src="/assets/img3.png" alt="imgRoll" height="75px" class="imgRoll3" /> -->
       <div class="ejectCount">{{ ejectedCount }}</div>
       <div class="ignoreCount">{{ rejectedCount }}</div>
-      <div class="cpuTemperature">
+      <app-machine-info class="cpuTemperature" [lable]="'CPU Temp'" [lableClass]="'cpuText'" [lableValue]="cpuTemperature + '&deg;C'" />
+      <!-- <div class="cpuTemperature">
         <h1>{{ cpuTemperature }}&deg;C</h1>
         <h6 class="cpuText">CPU Temp</h6>
-      </div>
-      <div class="gpuTemperature">
+      </div> -->
+      <app-machine-info class="gpuTemperature" [lable]="'GPU Temp'" [lableClass]="'gpuText'" [lableValue]="gpuTemperature + '&deg;C'" />
+      <!-- <div class="gpuTemperature">
         <h1>{{ gpuTemperature }}&deg;C</h1>
         <h6 class="gpuText">GPU Temp</h6>
-      </div>
-      <div class="conveyorSpeed">
+      </div> -->
+      <app-machine-info class="conveyorSpeed" [lable]="'Conveyor Speed'" [lableClass]="'speedText'" [lableValue]="conveyorSpeed + 'm/s'" />
+      <!-- <div class="conveyorSpeed">
         <h1>{{ conveyorSpeed }} m/s</h1>
         <h6 class="speedText">Conveyor Speed</h6>
-      </div>
-      <div class="motorAmpere">
+      </div> -->
+      <app-machine-info class="motorAmpere" [lable]="'Motor Ampere'" [lableClass]="'motorText'" [lableValue]="motorAmpere + 'A'" />
+      <!-- <div class="motorAmpere">
         <h1>{{ motorAmpere }} A</h1>
         <h6 class="motorText">Motor Ampere</h6>
-      </div>
-      <div class="visionTemperature">
+      </div> -->
+      <app-machine-info class="visionTemperature" [lable]="'Vision Temperature'" [lableClass]="'visionText'" [lableValue]="visionTemperature + '&deg;C'" />
+      <!-- <div class="visionTemperature">
         <h1>{{visionTemperature }}&deg;C</h1>
         <h6 class="visionText">Vision Temperature</h6>
-      </div>
-      <div class="sessionCount">
+      </div> -->
+      <app-machine-info class="sessionCount" [lable]="'Session Count'" [lableClass]="'sessionCountText'" [lableValue]="serverData.sessionCount" />
+      <!-- <div class="sessionCount">
         <h1>{{ serverData.sessionCount }}</h1>
         <h6 class="sessionCountText">Session Count</h6>
-      </div>
-      <div class="sessionDateTime">
+      </div> -->
+      <app-machine-info class="sessionDateTime" [lable]="'Session Start time'" [lableClass]="'sessionDateTimeText'" [lableValue]="serverData.sDate + ' ' + serverData.sTime" />
+      <!-- <div class="sessionDateTime">
         <h1>{{ serverData.sDate + " " + serverData.sTime }}</h1>
         <h6 class="sessionDateTimeText">Session Start time</h6>
-      </div>
-      <div class="efficiency">
+      </div> -->
+      <app-machine-info class="efficiency" [lable]="'Efficiency'" [lableClass]="'efficiencyText'" [lableValue]="serverData.Efficiency + '%'" />
+      <!-- <div class="efficiency">
         <h1>{{ serverData.Efficiency }}%</h1>
         <h6 class="efficiencyText">Efficiency</h6>
-      </div>
-      <div class="recipe">
+      </div> -->
+      <app-machine-info class="recipe" [lable]="'Recipe'" [lableClass]="'recipeText'" [lableValue]="serverData.selectedRecipe" />
+      <!-- <div class="recipe">
         <h1>{{ serverData.selectedRecipe }}</h1>
         <h6 class="recipeText">Recipe</h6>
-      </div>
+      </div> -->
     </div>
 
     <div class="machineLog">
@@ -93,7 +102,7 @@
           <th>errorCause</th>
           <th>errorRemedy</th>
         </tr>
-        <tr *ngFor="let error of serverData.log">
+        <tr *ngFor="let error of serverData.log; trackBy: trackByErrorCode">
           <td>{{ error.errorCode }}</td>
           <td>{{ error.message }}</td>
           <td>{{ error.errorFrequency }}</td>
@@ -104,7 +113,6 @@
       </table>
     </div>
   </div>
-
 </div>
 <!-- <div class="box">
   <div class="innerBox">

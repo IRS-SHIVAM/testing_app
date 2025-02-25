@@ -75,16 +75,6 @@
     width: 177px;
     color: white;
 }
-.gpuText , .cpuText , .speedText , .motorText, .visionText , .sessionCountText , .sessionDateTimeText, .recipeText{
-    font-size: 13px;
-    background-color: #1B2531;
-    font-weight: bold;
-}
-.efficiencyText{
-    font-size: 13px;
-    background-color: rgb(190, 190, 190);
-    font-weight: bold;
-}
 .conveyorSpeed{
     background-color: #1B2531;
     width: fit-content;
