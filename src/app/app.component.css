@@ -115,6 +115,7 @@
     position: absolute;
     top: 95px;
     right: 420px;
+    text-align: center;
 }
 @keyframes rollImg1res1{
     0%{
@@ -272,7 +273,6 @@
     flex-direction: column;
     text-align: right;
     position: relative;
-    overflow-x: scroll;
 }
 /* .containner .machineDetails .imgContainner{
     margin: auto;
