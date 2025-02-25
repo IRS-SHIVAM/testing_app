@@ -1,9 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
 
@@ -42,38 +42,6 @@ export class AppComponent {
       "errorTime": "2025-02-19 14:11:03",
       "errorCause": "Air Pressure might have gone below 4.5 bar",
       "errorRemedy": "Check the pressure from compressor unit,Check the shut off valve in ON position"
-    },
-    {
-      "errorCode": 1002,
-      "message": "Pressure low",
-      "errorFrequency": 2,
-      "errorTime": "2025-02-19 14:11:03",
-      "errorCause": "Air Pressure might have gone below 4.5 bar",
-      "errorRemedy": "Check the pressure from compressor unit,Check the shut off valve in ON position"
-    },
-    {
-      "errorCode": 1002,
-      "message": "Pressure low",
-      "errorFrequency": 2,
-      "errorTime": "2025-02-19 14:11:03",
-      "errorCause": "Air Pressure might have gone below 4.5 bar",
-      "errorRemedy": "Check the pressure from compressor unit,Check the shut off valve in ON position"
-    },
-    {
-      "errorCode": 1002,
-      "message": "Pressure low",
-      "errorFrequency": 2,
-      "errorTime": "2025-02-19 14:11:03",
-      "errorCause": "Air Pressure might have gone below 4.5 bar",
-      "errorRemedy": "Check the pressure from compressor unit,Check the shut off valve in ON position"
-    },
-    {
-      "errorCode": 1002,
-      "message": "Pressure low",
-      "errorFrequency": 2,
-      "errorTime": "2025-02-19 14:11:03",
-      "errorCause": "Air Pressure might have gone below 4.5 bar",
-      "errorRemedy": "Check the pressure from compressor unit,Check the shut off valve in ON position"
     }]
   }
 
@@ -88,5 +56,8 @@ export class AppComponent {
   }
   updateRejectedValues() {
     this.rejectedCount += Math.floor(Math.random() * 10);
+  }
+  trackByErrorCode(index:number,item:any){
+    return index;
   }
 }
