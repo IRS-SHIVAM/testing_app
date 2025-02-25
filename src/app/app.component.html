@@ -8,7 +8,8 @@
       <h4>{{ serverData.deviceId }}</h4>
     </div>
 
-    <div class="machineInfo">
+
+    <!-- <div class="machineInfo">
       <div class="machineImg">
         <img src="/assets/images/machine.webp" alt="machine">
         <h4 [ngClass]="machineRunning ? 'machineRunning' : 'machineStop'">Running</h4>
@@ -31,10 +32,10 @@
           recipe : {{ serverData.selectedRecipe }}
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="imgContainner">
-      <img src="assets/images/suka3.png" alt="abc" class="suka" >
+      <img src="assets/images/suka3.png" alt="abc" class="suka">
       <img src="/assets/images/img1.png" alt="imgRoll" height="95px" class="imgRoll1" />
       <img src="/assets/images/img2.png" alt="imgRoll" height="95px" class="imgRoll2" />
       <img src="/assets/images/img3.png" alt="imgRoll" height="95px" class="imgRoll3" />
@@ -44,24 +45,40 @@
       <div class="ejectCount">{{ ejectedCount }}</div>
       <div class="ignoreCount">{{ rejectedCount }}</div>
       <div class="cpuTemperature">
-        <div>{{ cpuTemperature }}&deg;C</div>
-        <div class="cpuText">CPU Temp</div>
+        <h1>{{ cpuTemperature }}&deg;C</h1>
+        <h6 class="cpuText">CPU Temp</h6>
       </div>
       <div class="gpuTemperature">
-        <div>{{ gpuTemperature }}&deg;C</div>
-        <div class="gpuText">GPU Temp</div>
+        <h1>{{ gpuTemperature }}&deg;C</h1>
+        <h6 class="gpuText">GPU Temp</h6>
       </div>
       <div class="conveyorSpeed">
-        <div>{{ conveyorSpeed }} m/s</div>
-        <div class="speedText">Conveyor Speed</div>
+        <h1>{{ conveyorSpeed }} m/s</h1>
+        <h6 class="speedText">Conveyor Speed</h6>
       </div>
-      <div class="motorAmpere" >
-        <div>{{ motorAmpere }} A</div>
-        <div class="motorText">Motor Ampere</div>
+      <div class="motorAmpere">
+        <h1>{{ motorAmpere }} A</h1>
+        <h6 class="motorText">Motor Ampere</h6>
       </div>
       <div class="visionTemperature">
-        <div>{{visionTemperature }}&deg;C</div>
-        <div class="visionText">Vision Temperature</div>
+        <h1>{{visionTemperature }}&deg;C</h1>
+        <h6 class="visionText">Vision Temperature</h6>
+      </div>
+      <div class="sessionCount">
+        <h1>{{ serverData.sessionCount }}</h1>
+        <h6 class="sessionCountText">Session Count</h6>
+      </div>
+      <div class="sessionDateTime">
+        <h1>{{ serverData.sDate + " " + serverData.sTime }}</h1>
+        <h6 class="sessionDateTimeText">Session Start time</h6>
+      </div>
+      <div class="efficiency">
+        <h1>{{ serverData.Efficiency }}%</h1>
+        <h6 class="efficiencyText">Efficiency</h6>
+      </div>
+      <div class="recipe">
+        <h1>{{ serverData.selectedRecipe }}</h1>
+        <h6 class="recipeText">Recipe</h6>
       </div>
     </div>
 
@@ -83,7 +100,6 @@
           <td>{{ error.errorTime }}</td>
           <td>{{ error.errorCause }}</td>
           <td>{{ error.errorRemedy }}</td>
-
         </tr>
       </table>
     </div>

@@ -75,9 +75,15 @@
     width: 177px;
     color: white;
 }
-.gpuText , .cpuText , .speedText , .motorText, .visionText{
+.gpuText , .cpuText , .speedText , .motorText, .visionText , .sessionCountText , .sessionDateTimeText, .recipeText{
     font-size: 13px;
     background-color: #1B2531;
+    font-weight: bold;
+}
+.efficiencyText{
+    font-size: 13px;
+    background-color: rgb(190, 190, 190);
+    font-weight: bold;
 }
 .conveyorSpeed{
     background-color: #1B2531;
@@ -114,7 +120,59 @@
     color: white;
     position: absolute;
     top: 95px;
-    right: 420px;
+    right: 410px;
+    text-align: center;
+}
+.sessionCount{
+    background-color:#1B2531;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 480px;
+    text-align: center;
+}
+.sessionDateTime{
+    background-color:#1B2531;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 80px;
+    left: 130px;
+    text-align: center;
+}
+.efficiency{
+    background-color: rgb(190, 190, 190);
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    color: black;
+    position: absolute;
+    top: 130px;
+    left: 460px;
+    text-align: center;
+}
+.recipe{
+    background-color: #1B2531 ;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 110px;
+    left: 800px;
     text-align: center;
 }
 @keyframes rollImg1res1{
@@ -443,6 +501,22 @@
     .visionTemperature{
         top: 50px;
         left: 380px;
+    }
+    .sessionDateTime{
+        top: 30px;
+        left: 40px;
+    }
+    .sessionCount{
+        top: -2px;
+        left: 270px;
+    }
+    .efficiency{
+        top: 48px;
+        left: 265px;
+    }
+    .recipe{
+        top: 50px;
+        left: 470px;
     }
 }
 
