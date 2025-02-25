@@ -22,119 +22,70 @@
     animation-delay: 4.8s;
     scale: .8;
 }
-.ejectCount{
+.ejectCount , .ignoreCount , .cpuTemperature , .gpuTemperature ,.conveyorSpeed , .motorAmpere , .visionTemperature , .sessionCount ,.sessionDateTime , .efficiency ,.recipe 
+{
     background-color: #1B2531;
-    height: 73px;
-    width: 142px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right : 167px;
-    bottom:10px;
-    border-bottom: 6px solid rgb(80, 79, 79);
-    color: white;
-}
-.ignoreCount{
-    background-color: #1B2531;
-    height: 180px;
-    width: 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right : 28px;
-    bottom:2px;
-    border-radius: 80px 0px 0px 0px;
-    color: white;
-    border-bottom: 6px solid rgb(80, 79, 79);
-}
-.cpuTemperature{
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color : #1B2531;
+    position: absolute;
+    color: white;
+    text-align: center;
+}
+.ejectCount{
+    height: 73px;
+    width: 142px;
+    right : 167px;
+    bottom:10px;
+    border-bottom: 6px solid rgb(80, 79, 79);
+}
+.ignoreCount{
+    height: 180px;
+    width: 110px;
+    right : 28px;
+    bottom:2px;
+    border-radius: 80px 0px 0px 0px;
+    border-bottom: 6px solid rgb(80, 79, 79);
+}
+.cpuTemperature{
     height: 117px;
     top : 341px;
     left: 105px;
     width: 130px;
-    color: white;
 }
 .gpuTemperature{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color : #1B2531;
     height: 117px;
     top : 341px;
     left: 245px;
     width: 177px;
-    color: white;
 }
 .conveyorSpeed{
-    background-color: #1B2531;
     width: fit-content;
     font-size: small;
-    position: absolute;
     left:20px;
     top: 150px;
     height: 30px;
-    color: white;
-    text-align: center;
 }
 .motorAmpere{
     width: 152px;
     font-size: small;
-    position: absolute;
     left:622px;
     top: 342px;
     height: 117px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #1B2531;
 }
 .visionTemperature{
-    background-color: #1B2531;
     width: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center ;
-    align-items: center;
-    color: white;
-    position: absolute;
     top: 95px;
     right: 410px;
-    text-align: center;
 }
 .sessionCount{
-    background-color:#1B2531;
     width: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center ;
-    align-items: center;
-    color: white;
-    position: absolute;
     top: 20px;
     left: 480px;
-    text-align: center;
 }
 .sessionDateTime{
-    background-color:#1B2531;
     width: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center ;
-    align-items: center;
-    color: white;
-    position: absolute;
     top: 80px;
     left: 130px;
     text-align: center;
@@ -142,28 +93,14 @@
 .efficiency{
     background-color: rgb(190, 190, 190);
     width: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center ;
-    align-items: center;
     color: black;
-    position: absolute;
     top: 130px;
     left: 460px;
-    text-align: center;
 }
 .recipe{
-    background-color: #1B2531 ;
     width: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center ;
-    align-items: center;
-    color: white;
-    position: absolute;
     top: 110px;
     left: 800px;
-    text-align: center;
 }
 @keyframes rollImg1res1{
     0%{
