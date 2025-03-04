@@ -25,6 +25,18 @@ export class AppComponent implements AfterViewInit, OnInit {
     conveyorSpeed: number = 3.21;
     motorAmpere: number = 5.19;
     visionTemperature: number = 38;
+    panelTemperature: number = 65;
+    leftCameraTemperature: number = 65;
+    rightCameraTemperature: number = 65;
+    isHoveringBelt= false;
+    isHoveringMotor = false;
+    isHoveringCpu = false;
+    isHoveringGpu = false;
+    isHoveringVision = false;
+    isHoveringCam = false;
+    isHoveringEjected = false;
+    isHoveringRejected = false;
+    isHoveringPanel = false;
     serverData = {
         totalEjected: 45032,
         totalIgnored: 3402,
@@ -111,6 +123,34 @@ export class AppComponent implements AfterViewInit, OnInit {
         console.log(event?.offsetX);
         console.log(event?.offsetY);
     }
+    showConveyorSpeed(show: boolean) {
+        this.isHoveringBelt = show;
+    }
+    showMotorAmpere(show: boolean){
+        this.isHoveringMotor = show;
+    }
+    showCpuTemp(show: boolean){
+        this.isHoveringCpu = show;
+    }
+    showGpuTemp(show: boolean){
+        this.isHoveringGpu = show;
+    }
+    showVisionTemp(show: boolean){
+        this.isHoveringVision = show;
+    }
+    showPanelTemp(show: boolean){
+        this.isHoveringPanel = show;
+    }
+    showCamTemp(show: boolean){
+        this.isHoveringCam = show;
+    }
+    showEjectedCount(show: boolean){
+        this.isHoveringEjected = show    
+    }
+    showRejectedCount(show: boolean){
+        this.isHoveringRejected = show    
+    }
+    
 
     loadGoogleTranslate() {
         const existingIframe = document.querySelector(

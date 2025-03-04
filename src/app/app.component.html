@@ -43,28 +43,99 @@
                 (click)="getImageCord($event)"
             />
             <svg class="svg">
-                <defs>
-                    <linearGradient
-                        id="stripedGradient"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%"
-                        spreadMethod="repeat"
-                    >
-                        <stop offset="0%" stop-color="gray" />
-                        <stop offset="10%" stop-color="gray" />
-                        <stop offset="10%" stop-color="transparent" />
-                        <stop offset="20%" stop-color="transparent" />
-                    </linearGradient>
-                </defs>
+                conveyorSpeed
                 <polygon
                     class="poly"
                     points="110,103 254,61 370,110 365,211"
                     fill="transparent"
                     #poly
+                    (mouseenter)="showConveyorSpeed(true)"
+                    (mouseleave)="showConveyorSpeed(false)"
                 />
+                <line x1="140" y1="100" x2="100" y2="50" stroke="white" stroke-width="2" *ngIf="isHoveringBelt"/>
+                Cpu Temperature
+                <polygon
+                    class="poly"
+                    points="435,130 480,117 479,202 431,217"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="showCpuTemp(true)"
+                    (mouseleave)="showCpuTemp(false)"
+                />
+                <line x1="448" y1="169" x2="260" y2="394" stroke="white" stroke-width="2" *ngIf="isHoveringCpu"/>
+                Gpu Temperature
+                <polygon
+                    class="poly"
+                    points="487,115 530,103 529,188 484,200"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="showGpuTemp(true)"
+                    (mouseleave)="showGpuTemp(false)"
+                />
+                <line x1="500" y1="157" x2="260" y2="394" stroke="white" stroke-width="2" *ngIf="isHoveringGpu"/>
+                visionTemperature
+                <polygon
+                    class="poly"
+                    points="538,100 582,88 580,172 535,185"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="showVisionTemp(true)"
+                    (mouseleave)="showVisionTemp(false)"
+                />
+                <line x1="556" y1="149" x2="260" y2="394" stroke="white" stroke-width="2" *ngIf="isHoveringVision"/>
+                ejectedCount
+                <polygon
+                    class="poly"
+                    points="824,312 924,280 921,379 821,409"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="showEjectedCount(true)"
+                    (mouseleave)="showEjectedCount(false)"
+                />
+                <line x1="868" y1="350" x2="1091" y2="311" stroke="white" stroke-width="2" *ngIf="isHoveringEjected"/>
+                
+                rejectedCount
+                <polygon
+                    class="poly"
+                    points="936,278 1039,248 1035,345 932,377"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="showRejectedCount(true)"
+                    (mouseleave)="showRejectedCount(false)"
+                />
+                <line x1="1017" y1="302" x2="1121" y2="185" stroke="white" stroke-width="2" *ngIf="isHoveringRejected"/>
+                panel Temperature
+                <polygon
+                    class="poly"
+                    points="553,190 629,168 678,166 602,191"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="showPanelTemp(true)"
+                    (mouseleave)="showPanelTemp(false)"
+                />
+                <line x1="606" y1="181" x2="434" y2="459" stroke="white" stroke-width="2" *ngIf="isHoveringPanel"/>
+                left-right camera
+                <polygon
+                    class="poly"
+                    points="653,161 731,140 777,141 690,162"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="showCamTemp(true)"
+                    (mouseleave)="showCamTemp(false)"
+                />
+                <line x1="719" y1="150" x2="809" y2="103" stroke="white" stroke-width="2" *ngIf="isHoveringCam"/>
+                motor Ampere
+                <polygon
+                    class="poly"
+                    points="633,363 643,370 651,383 698,400 709,393 722,398 736,411 736,421 727,431 701,423 687,426 675,418 673,408 640,393 616,382 627,371"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="showMotorAmpere(true)"
+                    (mouseleave)="showMotorAmpere(false)"
+                />
+                <line x1="698" y1="440" x2="582" y2="492" stroke="white" stroke-width="2" *ngIf="isHoveringMotor"/>
             </svg>
+            <div class="motorAlert"></div>
             <img
                 src="/assets/images/img1.png"
                 alt="imgRoll"
@@ -96,54 +167,78 @@
             <div class="box"></div>
 
             <!-- <img src="/assets/img3.png" alt="imgRoll" height="75px" class="imgRoll3" /> -->
-            <!-- <div class="ejectCount" #ejectCount>{{ ejectedCount }}</div>
-            <div class="ignoreCount">{{ rejectedCount }}</div>
-            <app-machine-info
+            <div class="ejectCount" *ngIf="isHoveringEjected">EjectedCount-{{ ejectedCount }}</div>
+            <div class="ignoreCount" *ngIf="isHoveringRejected">RejectedCount-{{ rejectedCount }}</div>
+            
+            <app-machine-info *ngIf="isHoveringCpu"
                 class="cpuTemperature"
                 [lable]="'CPU Temp'"
                 [lableClass]="'cpuText'"
                 [lableValue]="cpuTemperature + '&deg;C'"
-            /> -->
+            />
             <!-- <div class="cpuTemperature">
         <h1>{{ cpuTemperature }}&deg;C</h1>
         <h6 class="cpuText">CPU Temp</h6>
       </div> -->
-            <!-- <app-machine-info
+            <app-machine-info *ngIf="isHoveringGpu"
                 class="gpuTemperature"
                 [lable]="'GPU Temp'"
                 [lableClass]="'gpuText'"
                 [lableValue]="gpuTemperature + '&deg;C'"
-            /> -->
+            />
             <!-- <div class="gpuTemperature">
         <h1>{{ gpuTemperature }}&deg;C</h1>
         <h6 class="gpuText">GPU Temp</h6>
       </div> -->
-            <!-- <app-machine-info
+      <div>
+        <app-machine-info *ngIf="isHoveringBelt"
                 class="conveyorSpeed"
                 [lable]="'Conveyor Speed'"
                 [lableClass]="'speedText'"
-                [lableValue]="conveyorSpeed + 'm/s'"
-            /> -->
+                [lableValue]="conveyorSpeed + ' m/s'"
+                
+            />
+      </div>
+            
             <!-- <div class="conveyorSpeed">
         <h1>{{ conveyorSpeed }} m/s</h1>
         <h6 class="speedText">Conveyor Speed</h6>
       </div> -->
-            <!-- <app-machine-info
+            <app-machine-info *ngIf="isHoveringMotor"
                 class="motorAmpere"
                 [lable]="'Motor Ampere'"
                 [lableClass]="'motorText'"
                 [lableValue]="motorAmpere + 'A'"
-            /> -->
+            />
             <!-- <div class="motorAmpere">
         <h1>{{ motorAmpere }} A</h1>
         <h6 class="motorText">Motor Ampere</h6>
       </div> -->
-            <!-- <app-machine-info
+            <app-machine-info *ngIf="isHoveringVision"
                 class="visionTemperature"
                 [lable]="'Vision Temperature'"
                 [lableClass]="'visionText'"
                 [lableValue]="visionTemperature + '&deg;C'"
-            /> -->
+            />
+            <app-machine-info *ngIf="isHoveringPanel"
+                class="panelTemperature"
+                [lable]="'Panel Temperature'"
+                [lableClass]="'panel'"
+                [lableValue]="panelTemperature + '&deg;C'"
+            />
+
+            <app-machine-info *ngIf="isHoveringCam"
+                class="leftCamTemperature"
+                [lable]="'Left Camera Temperature'"
+                [lableClass]="'leftCamText'"
+                [lableValue]="leftCameraTemperature + '&deg;C'"
+            />
+            <app-machine-info *ngIf="isHoveringCam"
+                class="rightCamTemperature"
+                [lable]="'Right Camera Temperature'"
+                [lableClass]="'rightCamText'"
+                [lableValue]="rightCameraTemperature + '&deg;C'"
+            />
             <!-- <div class="visionTemperature">
         <h1>{{visionTemperature }}&deg;C</h1>
         <h6 class="visionText">Vision Temperature</h6>
@@ -224,6 +319,8 @@
         </div>
     </div>
 </div>
+
+
 
 <!-- <div class="">ABC_XYZ</div> -->
 <!-- <div class="box">
