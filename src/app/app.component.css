@@ -443,6 +443,12 @@
         /* background-color: red; */
         width: 700px;
     }
+    .containner .machineDetails .imgContainner .svgRes1 {
+        display: none;
+    }
+    .containner .machineDetails .imgContainner .svgRes2 {
+        display: block;
+    }
     .imgRoll1,
     .imgRoll3 {
         left: 40px;
@@ -550,6 +556,21 @@
         height: 15px;
         width: 15px;
     }
+    .containner .machineDetails .imgContainner .box {
+        width: 159px;
+        height: 96px;
+        clip-path: polygon(59% 2%, 107% 37%, 100% 95%, 4% 29%);
+        /* background-color: white; */
+        top: 33px;
+        left: 64px;
+        background-image: repeating-linear-gradient(
+            90deg,
+            gray 0%,
+            gray 10%,
+            transparent 10%,
+            transparent 20%
+        );
+    }
 }
 
 @media screen and (max-width: 960px) {
@@ -602,13 +623,23 @@
 .demoSvg {
     position: relative;
 }
-.svg {
+.svgRes1 {
     position: absolute;
     top: 0px;
     left: 0px;
     width: 1160px;
     height: 572px;
     z-index: 3;
+    /* background-color: green; */
+}
+.svgRes2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 700px;
+    height: 345px;
+    z-index: 4;
+    display: none;
     /* background-color: red; */
 }
 .poly {
@@ -625,8 +656,9 @@
 .poly:hover {
     /* border: 2px solid black; */
     transition: stroke 0.5s ease-in-out, stroke-width 0.5s, fill 0.5s;
-    stroke: red;
+    stroke: rgb(0, 255, 0);
     stroke-width: 4px;
+    cursor: pointer;
 }
 
 @keyframes moveDashes {
