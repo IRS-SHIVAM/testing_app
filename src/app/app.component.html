@@ -1,15 +1,15 @@
 <div class="containner">
-  <div class="navbar">
-    <h1>Navbar</h1>
-  </div>
-
-  <div class="machineDetails">
-    <div class="machineName">
-      <h4>{{ serverData.deviceId }}</h4>
+    <div class="navbar">
+        <h1>Navbar</h1>
+        <div id="google_translate_element"></div>
     </div>
 
+    <div class="machineDetails">
+        <div class="machineName">
+            <h4>{{ serverData.deviceId }}</h4>
+        </div>
 
-    <!-- <div class="machineInfo">
+        <!-- <div class="machineInfo">
       <div class="machineImg">
         <img src="/assets/images/machine.webp" alt="machine">
         <h4 [ngClass]="machineRunning ? 'machineRunning' : 'machineStop'">Running</h4>
@@ -33,87 +33,199 @@
         </div>
       </div>
     </div> -->
+        <div class="imgContainner">
+            <img
+                src="assets/images/real-suka.png"
+                alt="abc"
+                class="suka"
+                loading="lazy"
+                #suka
+                (click)="getImageCord($event)"
+            />
+            <svg class="svg">
+                <defs>
+                    <linearGradient
+                        id="stripedGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="0%"
+                        spreadMethod="repeat"
+                    >
+                        <stop offset="0%" stop-color="gray" />
+                        <stop offset="10%" stop-color="gray" />
+                        <stop offset="10%" stop-color="transparent" />
+                        <stop offset="20%" stop-color="transparent" />
+                    </linearGradient>
+                </defs>
+                <polygon
+                    class="poly"
+                    points="110,103 254,61 370,110 365,211"
+                    fill="transparent"
+                    #poly
+                />
+            </svg>
+            <img
+                src="/assets/images/img1.png"
+                alt="imgRoll"
+                height="70px"
+                class="imgRoll1"
+                loading="lazy"
+            />
+            <img
+                src="/assets/images/img2.png"
+                alt="imgRoll"
+                height="70px"
+                class="imgRoll2"
+                loading="lazy"
+            />
+            <img
+                src="/assets/images/img3.png"
+                alt="imgRoll"
+                height="70px"
+                class="imgRoll3"
+                loading="lazy"
+            />
+            <img
+                src="/assets/images/img4.png"
+                alt="imgRoll"
+                height="70px"
+                class="imgRoll4"
+                loading="lazy"
+            />
+            <div class="box"></div>
 
-    <div class="imgContainner">
-      <img src="assets/images/suka3.png" alt="abc" class="suka" loading="lazy" />
-      <img src="/assets/images/img1.png" alt="imgRoll" height="95px" class="imgRoll1" loading="lazy" />
-      <img src="/assets/images/img2.png" alt="imgRoll" height="95px" class="imgRoll2" loading="lazy" />
-      <img src="/assets/images/img3.png" alt="imgRoll" height="95px" class="imgRoll3" loading="lazy" />
-      <img src="/assets/images/img4.png" alt="imgRoll" height="95px" class="imgRoll4" loading="lazy" />
-
-      <!-- <img src="/assets/img3.png" alt="imgRoll" height="75px" class="imgRoll3" /> -->
-      <div class="ejectCount">{{ ejectedCount }}</div>
-      <div class="ignoreCount">{{ rejectedCount }}</div>
-      <app-machine-info class="cpuTemperature" [lable]="'CPU Temp'" [lableClass]="'cpuText'" [lableValue]="cpuTemperature + '&deg;C'" />
-      <!-- <div class="cpuTemperature">
+            <!-- <img src="/assets/img3.png" alt="imgRoll" height="75px" class="imgRoll3" /> -->
+            <!-- <div class="ejectCount" #ejectCount>{{ ejectedCount }}</div>
+            <div class="ignoreCount">{{ rejectedCount }}</div>
+            <app-machine-info
+                class="cpuTemperature"
+                [lable]="'CPU Temp'"
+                [lableClass]="'cpuText'"
+                [lableValue]="cpuTemperature + '&deg;C'"
+            /> -->
+            <!-- <div class="cpuTemperature">
         <h1>{{ cpuTemperature }}&deg;C</h1>
         <h6 class="cpuText">CPU Temp</h6>
       </div> -->
-      <app-machine-info class="gpuTemperature" [lable]="'GPU Temp'" [lableClass]="'gpuText'" [lableValue]="gpuTemperature + '&deg;C'" />
-      <!-- <div class="gpuTemperature">
+            <!-- <app-machine-info
+                class="gpuTemperature"
+                [lable]="'GPU Temp'"
+                [lableClass]="'gpuText'"
+                [lableValue]="gpuTemperature + '&deg;C'"
+            /> -->
+            <!-- <div class="gpuTemperature">
         <h1>{{ gpuTemperature }}&deg;C</h1>
         <h6 class="gpuText">GPU Temp</h6>
       </div> -->
-      <app-machine-info class="conveyorSpeed" [lable]="'Conveyor Speed'" [lableClass]="'speedText'" [lableValue]="conveyorSpeed + 'm/s'" />
-      <!-- <div class="conveyorSpeed">
+            <!-- <app-machine-info
+                class="conveyorSpeed"
+                [lable]="'Conveyor Speed'"
+                [lableClass]="'speedText'"
+                [lableValue]="conveyorSpeed + 'm/s'"
+            /> -->
+            <!-- <div class="conveyorSpeed">
         <h1>{{ conveyorSpeed }} m/s</h1>
         <h6 class="speedText">Conveyor Speed</h6>
       </div> -->
-      <app-machine-info class="motorAmpere" [lable]="'Motor Ampere'" [lableClass]="'motorText'" [lableValue]="motorAmpere + 'A'" />
-      <!-- <div class="motorAmpere">
+            <!-- <app-machine-info
+                class="motorAmpere"
+                [lable]="'Motor Ampere'"
+                [lableClass]="'motorText'"
+                [lableValue]="motorAmpere + 'A'"
+            /> -->
+            <!-- <div class="motorAmpere">
         <h1>{{ motorAmpere }} A</h1>
         <h6 class="motorText">Motor Ampere</h6>
       </div> -->
-      <app-machine-info class="visionTemperature" [lable]="'Vision Temperature'" [lableClass]="'visionText'" [lableValue]="visionTemperature + '&deg;C'" />
-      <!-- <div class="visionTemperature">
+            <!-- <app-machine-info
+                class="visionTemperature"
+                [lable]="'Vision Temperature'"
+                [lableClass]="'visionText'"
+                [lableValue]="visionTemperature + '&deg;C'"
+            /> -->
+            <!-- <div class="visionTemperature">
         <h1>{{visionTemperature }}&deg;C</h1>
         <h6 class="visionText">Vision Temperature</h6>
       </div> -->
-      <app-machine-info class="sessionCount" [lable]="'Session Count'" [lableClass]="'sessionCountText'" [lableValue]="serverData.sessionCount" />
-      <!-- <div class="sessionCount">
+            <!-- <app-machine-info
+                class="sessionCount"
+                [lable]="'Session Count'"
+                [lableClass]="'sessionCountText'"
+                [lableValue]="serverData.sessionCount"
+            /> -->
+            <!-- <div class="sessionCount">
         <h1>{{ serverData.sessionCount }}</h1>
         <h6 class="sessionCountText">Session Count</h6>
       </div> -->
-      <app-machine-info class="sessionDateTime" [lable]="'Session Start time'" [lableClass]="'sessionDateTimeText'" [lableValue]="serverData.sDate + ' ' + serverData.sTime" />
-      <!-- <div class="sessionDateTime">
+            <!-- <app-machine-info
+                class="sessionDateTime"
+                [lable]="'Session Start time'"
+                [lableClass]="'sessionDateTimeText'"
+                [lableValue]="serverData.sDate + ' ' + serverData.sTime"
+            /> -->
+            <!-- <div class="sessionDateTime">
         <h1>{{ serverData.sDate + " " + serverData.sTime }}</h1>
         <h6 class="sessionDateTimeText">Session Start time</h6>
       </div> -->
-      <app-machine-info class="efficiency" [lable]="'Efficiency'" [lableClass]="'efficiencyText'" [lableValue]="serverData.Efficiency + '%'" />
-      <!-- <div class="efficiency">
+            <!-- <app-machine-info
+                class="efficiency"
+                [lable]="'Efficiency'"
+                [lableClass]="'efficiencyText'"
+                [lableValue]="serverData.Efficiency + '%'"
+            /> -->
+            <!-- <div class="efficiency">
         <h1>{{ serverData.Efficiency }}%</h1>
         <h6 class="efficiencyText">Efficiency</h6>
       </div> -->
-      <app-machine-info class="recipe" [lable]="'Recipe'" [lableClass]="'recipeText'" [lableValue]="serverData.selectedRecipe" />
-      <!-- <div class="recipe">
+            <!-- <app-machine-info
+                class="recipe"
+                [lable]="'Recipe'"
+                [lableClass]="'recipeText'"
+                [lableValue]="serverData.selectedRecipe"
+            /> -->
+            <!-- <div class="recipe">
         <h1>{{ serverData.selectedRecipe }}</h1>
         <h6 class="recipeText">Recipe</h6>
       </div> -->
+            <!-- 
+            <div class="roll1"></div>
+            <div class="roll2"></div>
+            <div class="roll3"></div>
+            <div class="roll4"></div> -->
+        </div>
+        <div class="machineLog">
+            <h4 class="machineLogHeading">Logs</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>errorCode</th>
+                        <th>message</th>
+                        <th>Frequency</th>
+                        <th>errorTime</th>
+                        <th>errorCause</th>
+                        <th>errorRemedy</th>
+                    </tr>
+                </thead>
+                <tr
+                    *ngFor="
+                        let error of serverData.log;
+                        trackBy: trackByErrorCode
+                    "
+                >
+                    <td>{{ error.errorCode }}</td>
+                    <td>{{ error.message }}</td>
+                    <td>{{ error.errorFrequency }}</td>
+                    <td>{{ error.errorTime }}</td>
+                    <td>{{ error.errorCause }}</td>
+                    <td>{{ error.errorRemedy }}</td>
+                </tr>
+            </table>
+        </div>
     </div>
-
-    <div class="machineLog">
-      <h4 class="machineLogHeading">Logs</h4>
-      <table>
-        <tr>
-          <th>errorCode</th>
-          <th>message</th>
-          <th>Frequency</th>
-          <th>errorTime</th>
-          <th>errorCause</th>
-          <th>errorRemedy</th>
-        </tr>
-        <tr *ngFor="let error of serverData.log; trackBy: trackByErrorCode">
-          <td>{{ error.errorCode }}</td>
-          <td>{{ error.message }}</td>
-          <td>{{ error.errorFrequency }}</td>
-          <td>{{ error.errorTime }}</td>
-          <td>{{ error.errorCause }}</td>
-          <td>{{ error.errorRemedy }}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
 </div>
+
+<!-- <div class="">ABC_XYZ</div> -->
 <!-- <div class="box">
   <div class="innerBox">
     <div>64&deg;C</div>
