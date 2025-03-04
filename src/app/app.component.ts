@@ -107,9 +107,11 @@ export class AppComponent implements AfterViewInit, OnInit {
     endHoverEffact(borderBox: HTMLElement) {
         borderBox.style.display = 'none';
     }
+    cord: any = '';
     getImageCord(event: any) {
-        console.log(event?.offsetX);
-        console.log(event?.offsetY);
+        this.cord += event?.offsetX + ',' + event?.offsetY + ' ';
+        // console.log(event?.offsetX);
+        // console.log(event?.offsetY);
     }
 
     loadGoogleTranslate() {
@@ -136,5 +138,10 @@ export class AppComponent implements AfterViewInit, OnInit {
             },
             'google_translate_element'
         );
+    }
+
+    getCord() {
+        console.log(this.cord);
+        this.cord = '';
     }
 }

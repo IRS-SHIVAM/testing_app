@@ -42,30 +42,139 @@
                 #suka
                 (click)="getImageCord($event)"
             />
-            <svg class="svg">
-                <defs>
-                    <linearGradient
-                        id="stripedGradient"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%"
-                        spreadMethod="repeat"
-                    >
-                        <stop offset="0%" stop-color="gray" />
-                        <stop offset="10%" stop-color="gray" />
-                        <stop offset="10%" stop-color="transparent" />
-                        <stop offset="20%" stop-color="transparent" />
-                    </linearGradient>
-                </defs>
+            <svg class="svgRes1">
+                <!-- Conveyor -->
                 <polygon
                     class="poly"
                     points="110,103 254,61 370,110 365,211"
                     fill="transparent"
                     #poly
                 />
+                <!-- cpu -->
+                <polygon
+                    class="poly"
+                    points="435,130 480,117 479,202 431,217"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- gpu -->
+                <polygon
+                    class="poly"
+                    points="487,115 530,103 529,188 484,200"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- vision temp -->
+                <polygon
+                    class="poly"
+                    points="538,100 582,88 580,172 535,185"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- left cam -->
+                <polygon
+                    class="poly"
+                    points="824,312 924,280 921,379 821,409"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- right cam -->
+                <polygon
+                    class="poly"
+                    points="936,278 1039,248 1035,345 932,377"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- eject -->
+                <polygon
+                    class="poly"
+                    points="553,190 629,168 678,166 602,191"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- reject -->
+                <polygon
+                    class="poly"
+                    points="653,161 731,140 777,141 690,162"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- motor -->
+                <polygon
+                    class="poly"
+                    points="633,363 643,370 651,383 698,400 709,393 722,398 736,411 736,421 727,431 701,423 687,426 675,418 673,408 640,393 616,382 627,371"
+                    fill="transparent"
+                    #poly
+                />
             </svg>
-            <img
+            <svg class="svgRes2">
+                <!-- conveyor -->
+                <polygon
+                    class="poly"
+                    points="154,38 224,67 221,128 67,63"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- cpu -->
+                <polygon
+                    class="poly"
+                    points="262,79 290,71 288,124 260,131"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- gpu -->
+                <polygon
+                    class="poly"
+                    points="293,69 321,62 319,115 292,122"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- vision -->
+                <polygon
+                    class="poly"
+                    points="325,60 353,52 350,105 322,113"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- left cam -->
+                <polygon
+                    class="poly"
+                    points="333,116 386,99 409,101 365,115"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- right cam -->
+                <polygon
+                    class="poly"
+                    points="396,97 442,85 470,86 422,100"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- eject -->
+                <polygon
+                    class="poly"
+                    points="497,188 560,169 555,230 494,249"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- reject -->
+                <polygon
+                    class="poly"
+                    points="564,168 631,147 626,211 562,228"
+                    fill="transparent"
+                    #poly
+                />
+                <!-- motor -->
+                <polygon
+                    class="poly"
+                    points="374,225 383,219 391,223 393,230 422,242 430,237 435,243 444,248 446,255 439,260 425,254 412,257 409,247 391,237 385,238 375,233"
+                    fill="transparent"
+                    #poly
+                />
+            </svg>
+            <div class="box"></div>
+            <button (click)="getCord()">Give Cordinate</button>
+            <!-- <img
                 src="/assets/images/img1.png"
                 alt="imgRoll"
                 height="70px"
@@ -92,8 +201,7 @@
                 height="70px"
                 class="imgRoll4"
                 loading="lazy"
-            />
-            <div class="box"></div>
+            /> -->
 
             <!-- <img src="/assets/img3.png" alt="imgRoll" height="75px" class="imgRoll3" /> -->
             <!-- <div class="ejectCount" #ejectCount>{{ ejectedCount }}</div>
