@@ -35,146 +35,164 @@
     </div> -->
         <div class="imgContainner">
             <img
-                src="assets/images/real-suka.png"
+                src="assets/images/suka-top-view.png"
                 alt="abc"
                 class="suka"
                 loading="lazy"
                 #suka
                 (click)="getImageCord($event)"
             />
-            <svg class="svgRes1">
+            <svg class="svgRes1" [class.stopPoly]="isStop">
                 <!-- Conveyor -->
                 <polygon
                     class="poly"
-                    points="110,103 254,61 370,110 365,211"
+                    points="38,95 37,290 422,290 422,94"
                     fill="transparent"
+                    [class.errorPoly]="errorArray['conveyorError']"
                     #poly
                 />
                 <!-- cpu -->
                 <polygon
                     class="poly"
-                    points="435,130 480,117 479,202 431,217"
+                    points="497,133 547,133 547,69 497,69"
                     fill="transparent"
                     #poly
                 />
                 <!-- gpu -->
                 <polygon
                     class="poly"
-                    points="487,115 530,103 529,188 484,200"
+                    points="497,158 545,158 545,224 497,224"
                     fill="transparent"
                     #poly
                 />
-                <!-- vision temp -->
+                <!-- panal temp -->
                 <polygon
                     class="poly"
-                    points="538,100 582,88 580,172 535,185"
+                    points="497,252 545,252 545,313 497,313"
                     fill="transparent"
                     #poly
                 />
                 <!-- left cam -->
                 <polygon
                     class="poly"
-                    points="824,312 924,280 921,379 821,409"
+                    points="609,94 678,94 679,185 609,185"
                     fill="transparent"
                     #poly
                 />
-                <!-- right cam -->
                 <polygon
                     class="poly"
-                    points="936,278 1039,248 1035,345 932,377"
+                    points="610,200 678,200 679,291 609,291"
                     fill="transparent"
                     #poly
                 />
                 <!-- eject -->
                 <polygon
                     class="poly"
-                    points="553,190 629,168 678,166 602,191"
+                    points="891,321 801,319 801,63 891,62"
                     fill="transparent"
                     #poly
                 />
                 <!-- reject -->
                 <polygon
                     class="poly"
-                    points="653,161 731,140 777,141 690,162"
+                    points="913,64 1021,64 1021,322 913,322"
                     fill="transparent"
                     #poly
                 />
                 <!-- motor -->
                 <polygon
                     class="poly"
-                    points="633,363 643,370 651,383 698,400 709,393 722,398 736,411 736,421 727,431 701,423 687,426 675,418 673,408 640,393 616,382 627,371"
+                    points="682,39 681,18 694,14 718,13 723,10 730,18 739,18 739,8 751,11 750,19 766,19 769,57 731,61 730,40 722,41 717,38 697,40 696,42"
+                    fill="transparent"
+                    #poly
+                />
+                <!--hood motor -->
+                <polygon
+                    class="poly"
+                    points="825,329 825,341 848,340 850,348 884,345 884,328 853,330 850,324 827,323 "
                     fill="transparent"
                     #poly
                 />
             </svg>
-            <svg class="svgRes2">
-                <!-- conveyor -->
+            <svg class="svgRes2" [class.stopPoly]="isStop">
+                <!-- Conveyor -->
                 <polygon
                     class="poly"
-                    points="154,38 224,67 221,128 67,63"
+                    points="25,64 284,64 284,201 25,201"
                     fill="transparent"
                     #poly
+                    [class.errorPoly]="errorArray['conveyorError']"
                 />
                 <!-- cpu -->
                 <polygon
                     class="poly"
-                    points="262,79 290,71 288,124 260,131"
+                    points="333,88 367,88 367,50 333,50"
                     fill="transparent"
                     #poly
                 />
                 <!-- gpu -->
                 <polygon
                     class="poly"
-                    points="293,69 321,62 319,115 292,122"
+                    points="333,108 367,108 367,152 333,152"
                     fill="transparent"
                     #poly
                 />
-                <!-- vision -->
+                <!-- panal temp -->
                 <polygon
                     class="poly"
-                    points="325,60 353,52 350,105 322,113"
+                    points="333,169 367,169 367,207 333,207"
                     fill="transparent"
                     #poly
                 />
                 <!-- left cam -->
                 <polygon
                     class="poly"
-                    points="333,116 386,99 409,101 365,115"
+                    points="409,64 456,64 456,125 409,125"
                     fill="transparent"
                     #poly
                 />
-                <!-- right cam -->
                 <polygon
                     class="poly"
-                    points="396,97 442,85 470,86 422,100"
+                    points="409,135 456,135 456,194 409,194"
                     fill="transparent"
                     #poly
                 />
                 <!-- eject -->
                 <polygon
                     class="poly"
-                    points="497,188 560,169 555,230 494,249"
+                    points="538,42 600,42 600,216 538,216"
                     fill="transparent"
                     #poly
                 />
                 <!-- reject -->
                 <polygon
                     class="poly"
-                    points="564,168 631,147 626,211 562,228"
+                    points="615,42 685,42 685,216 615,216"
                     fill="transparent"
                     #poly
                 />
                 <!-- motor -->
                 <polygon
                     class="poly"
-                    points="374,225 383,219 391,223 393,230 422,242 430,237 435,243 444,248 446,255 439,260 425,254 412,257 409,247 391,237 385,238 375,233"
+                    points="459,10 483,11 486,6 491,14 516,12 516,40 507,40 505,43 493,43 491,28 485,32 483,27 458,26"
+                    fill="transparent"
+                    #poly
+                />
+                <!--hood motor -->
+                <polygon
+                    class="poly"
+                    points="550,219 594,216 594,237 572,235 570,233 558,233"
                     fill="transparent"
                     #poly
                 />
             </svg>
-            <div class="box"></div>
-            <button (click)="getCord()">Give Cordinate</button>
-            <!-- <img
+            <div class="box1" [style.display]="isStop ? 'none' : 'block'"></div>
+            <div class="box2" [style.display]="isStop ? 'none' : 'block'"></div>
+            <div class="box3" [style.display]="isStop ? 'none' : 'block'"></div>
+            <!-- <button (click)="getCord()" style="margin-top: 20px">
+                Give Cordinate
+            </button> -->
+            <img
                 src="/assets/images/img1.png"
                 alt="imgRoll"
                 height="70px"
@@ -185,124 +203,47 @@
                 src="/assets/images/img2.png"
                 alt="imgRoll"
                 height="70px"
-                class="imgRoll2"
+                class="imgRoll3"
                 loading="lazy"
             />
             <img
                 src="/assets/images/img3.png"
                 alt="imgRoll"
                 height="70px"
-                class="imgRoll3"
+                class="imgRoll2"
                 loading="lazy"
             />
+
             <img
                 src="/assets/images/img4.png"
                 alt="imgRoll"
                 height="70px"
                 class="imgRoll4"
                 loading="lazy"
-            /> -->
-
-            <!-- <img src="/assets/img3.png" alt="imgRoll" height="75px" class="imgRoll3" /> -->
-            <!-- <div class="ejectCount" #ejectCount>{{ ejectedCount }}</div>
-            <div class="ignoreCount">{{ rejectedCount }}</div>
+            />
             <app-machine-info
-                class="cpuTemperature"
-                [lable]="'CPU Temp'"
-                [lableClass]="'cpuText'"
-                [lableValue]="cpuTemperature + '&deg;C'"
-            /> -->
-            <!-- <div class="cpuTemperature">
-        <h1>{{ cpuTemperature }}&deg;C</h1>
-        <h6 class="cpuText">CPU Temp</h6>
-      </div> -->
-            <!-- <app-machine-info
-                class="gpuTemperature"
-                [lable]="'GPU Temp'"
-                [lableClass]="'gpuText'"
-                [lableValue]="gpuTemperature + '&deg;C'"
-            /> -->
-            <!-- <div class="gpuTemperature">
-        <h1>{{ gpuTemperature }}&deg;C</h1>
-        <h6 class="gpuText">GPU Temp</h6>
-      </div> -->
-            <!-- <app-machine-info
-                class="conveyorSpeed"
-                [lable]="'Conveyor Speed'"
-                [lableClass]="'speedText'"
-                [lableValue]="conveyorSpeed + 'm/s'"
-            /> -->
-            <!-- <div class="conveyorSpeed">
-        <h1>{{ conveyorSpeed }} m/s</h1>
-        <h6 class="speedText">Conveyor Speed</h6>
-      </div> -->
-            <!-- <app-machine-info
-                class="motorAmpere"
-                [lable]="'Motor Ampere'"
-                [lableClass]="'motorText'"
-                [lableValue]="motorAmpere + 'A'"
-            /> -->
-            <!-- <div class="motorAmpere">
-        <h1>{{ motorAmpere }} A</h1>
-        <h6 class="motorText">Motor Ampere</h6>
-      </div> -->
-            <!-- <app-machine-info
-                class="visionTemperature"
-                [lable]="'Vision Temperature'"
-                [lableClass]="'visionText'"
-                [lableValue]="visionTemperature + '&deg;C'"
-            /> -->
-            <!-- <div class="visionTemperature">
-        <h1>{{visionTemperature }}&deg;C</h1>
-        <h6 class="visionText">Vision Temperature</h6>
-      </div> -->
-            <!-- <app-machine-info
-                class="sessionCount"
-                [lable]="'Session Count'"
-                [lableClass]="'sessionCountText'"
-                [lableValue]="serverData.sessionCount"
-            /> -->
-            <!-- <div class="sessionCount">
-        <h1>{{ serverData.sessionCount }}</h1>
-        <h6 class="sessionCountText">Session Count</h6>
-      </div> -->
-            <!-- <app-machine-info
-                class="sessionDateTime"
-                [lable]="'Session Start time'"
-                [lableClass]="'sessionDateTimeText'"
-                [lableValue]="serverData.sDate + ' ' + serverData.sTime"
-            /> -->
-            <!-- <div class="sessionDateTime">
-        <h1>{{ serverData.sDate + " " + serverData.sTime }}</h1>
-        <h6 class="sessionDateTimeText">Session Start time</h6>
-      </div> -->
-            <!-- <app-machine-info
-                class="efficiency"
-                [lable]="'Efficiency'"
-                [lableClass]="'efficiencyText'"
+                class="eject-count"
+                [lable]="'eject-count'"
+                [lableValue]="ejectedCount"
+                [lableClass]="'eject-count-text'"
+            ></app-machine-info>
+            <app-machine-info
+                class="reject-count"
+                [lable]="'reject-count'"
+                [lableValue]="rejectedCount"
+                [lableClass]="'reject-count-text'"
+            ></app-machine-info>
+            <app-machine-info
+                class="efficiency-count"
+                [lable]="'efficiency-count'"
                 [lableValue]="serverData.Efficiency + '%'"
-            /> -->
-            <!-- <div class="efficiency">
-        <h1>{{ serverData.Efficiency }}%</h1>
-        <h6 class="efficiencyText">Efficiency</h6>
-      </div> -->
-            <!-- <app-machine-info
-                class="recipe"
-                [lable]="'Recipe'"
-                [lableClass]="'recipeText'"
-                [lableValue]="serverData.selectedRecipe"
-            /> -->
-            <!-- <div class="recipe">
-        <h1>{{ serverData.selectedRecipe }}</h1>
-        <h6 class="recipeText">Recipe</h6>
-      </div> -->
-            <!-- 
-            <div class="roll1"></div>
-            <div class="roll2"></div>
-            <div class="roll3"></div>
-            <div class="roll4"></div> -->
+                [lableClass]="'efficiency-text'"
+            ></app-machine-info>
+            <div class="error" *ngIf="errorArray['conveyorError']">
+                conveyorSpeed increased 3.5 m/s
+            </div>
         </div>
-        <div class="machineLog">
+        <!-- <div class="machineLog">
             <h4 class="machineLogHeading">Logs</h4>
             <table>
                 <thead>
@@ -329,14 +270,6 @@
                     <td>{{ error.errorRemedy }}</td>
                 </tr>
             </table>
-        </div>
+        </div> -->
     </div>
 </div>
-
-<!-- <div class="">ABC_XYZ</div> -->
-<!-- <div class="box">
-  <div class="innerBox">
-    <div>64&deg;C</div>
-    <div>CPU</div>
-  </div>
-</div> -->

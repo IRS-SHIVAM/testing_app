@@ -25,6 +25,8 @@ export class AppComponent implements AfterViewInit, OnInit {
     conveyorSpeed: number = 3.21;
     motorAmpere: number = 5.19;
     visionTemperature: number = 38;
+    isError: boolean = true;
+    isStop: boolean = false;
     serverData = {
         totalEjected: 45032,
         totalIgnored: 3402,
@@ -57,6 +59,7 @@ export class AppComponent implements AfterViewInit, OnInit {
             },
         ],
     };
+    errorArray: any = [];
 
     constructor() {
         setInterval(() => {
@@ -80,6 +83,10 @@ export class AppComponent implements AfterViewInit, OnInit {
                 icon.style.display = 'none';
             }
         }, 1000);
+        setTimeout(() => {
+            this.errorArray['conveyorError'] = true;
+            console.log(this.errorArray['conveyorError']);
+        }, 5000);
     }
     updateEjectedValues() {
         this.ejectedCount += Math.floor(Math.random() * 10);

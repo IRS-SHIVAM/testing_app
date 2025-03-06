@@ -1,28 +1,33 @@
 .imgRoll1,
 .imgRoll3 {
     position: absolute;
-    left: 55px;
-    top: 180px;
-    /* animation: rollImg1res1 7s infinite; */
-    animation-duration: 7s;
+    /* left: 30px; */
+    /* top: 90px; */
+    left: 1.8%;
+    top: 25%;
+    animation: rollImg1res1 12s linear infinite;
+    /* animation-duration: 7s; */
     visibility: hidden;
 }
 .imgRoll2,
 .imgRoll4 {
     position: absolute;
-    left: 55px;
-    top: 180px;
-    /* animation: rollImg2res1 7s infinite; */
-    animation-duration: 7s;
+    left: 2.3%;
+    top: 40%;
+    animation: rollImg1res1 12s linear infinite;
+    /* animation-duration: 7s; */
     visibility: hidden;
-    animation-delay: 1.7s;
+
+    animation-delay: 4.8s;
 }
 .imgRoll3 {
-    animation-delay: 3.3s;
+    top: 53%;
+    animation-delay: 1.7s;
 }
 .imgRoll4 {
-    animation-delay: 4.8s;
+    animation-delay: 3.3s;
     scale: 0.8;
+    top: 65%;
 }
 .ejectCount,
 .ignoreCount,
@@ -174,69 +179,58 @@
 }
 @keyframes rollImg1res1 {
     0% {
-        left: 55px;
-        top: 200px;
-        rotate: 0deg;
+        /* left: 30px;
+        top: 90px; */
         visibility: visible;
-    }
-    25% {
-        left: 320px;
-        top: 200px;
-        visibility: hidden;
-        rotate: 0deg;
     }
     50% {
-        left: 520px;
-        top: 200px;
         visibility: hidden;
-        rotate: 0deg;
+    }
+    72% {
+        visibility: hidden;
     }
     75% {
-        left: 810px;
-        top: 200px;
-        rotate: 0deg;
         visibility: visible;
     }
+    76% {
+        visibility: hidden;
+    }
+    96% {
+        visibility: hidden;
+    }
     100% {
-        left: 890px;
-        top: 360px;
+        left: 69%;
         visibility: visible;
-        rotate: 460deg;
     }
 }
 
-@keyframes rollImg2res1 {
+/* @keyframes rollImg2res1 {
     0% {
-        left: 55px;
-        top: 200px;
-        rotate: 0deg;
+        left: 30px;
+        top: 90px;
         visibility: visible;
-    }
-    25% {
-        left: 320px;
-        top: 200px;
-        visibility: hidden;
-        rotate: 0deg;
     }
     50% {
-        left: 520px;
-        top: 200px;
         visibility: hidden;
-        rotate: 0deg;
+    }
+    72% {
+        visibility: hidden;
     }
     75% {
-        left: 810px;
-        top: 200px;
-        rotate: 0deg;
         visibility: visible;
+    }
+    76% {
+        visibility: hidden;
+    }
+    96% {
+        visibility: hidden;
     }
     100% {
-        left: 1030px;
-        top: 320px;
+        left: 715px;
+        top: 90px;
         visibility: visible;
-        rotate: 460deg;
     }
-}
+} */
 
 @keyframes rollImg1res2 {
     0% {
@@ -271,7 +265,7 @@
     }
 }
 
-@keyframes rollImg2res2 {
+/* @keyframes rollImg2res2 {
     0% {
         left: 40px;
         top: 122px;
@@ -302,7 +296,7 @@
         visibility: visible;
         rotate: 460deg;
     }
-}
+} */
 .containner {
     display: flex;
     width: 100%;
@@ -321,12 +315,11 @@
     top: 0px;
     left: 0px;
 }
-.containner .imgContainner {
+.containner .machineDetails .imgContainner {
     display: flex;
     margin: auto;
-    /* background-color: gray;   */
+    /* background-color: gray; */
     flex-direction: column;
-    text-align: right;
     position: relative;
 }
 /* .containner .machineDetails .imgContainner{
@@ -334,7 +327,7 @@
 } */
 .containner .imgContainner .suka {
     background-color: aqua;
-    width: 1160px;
+    width: 1040px;
     /* scale: 1.5; */
     background-color: #1b2531;
     transition: transform 2s;
@@ -347,7 +340,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: fit-content;
+    min-height: 100vh;
 }
 .containner .machineDetails .machineName h4 {
     margin: 10px;
@@ -451,20 +444,20 @@
     }
     .imgRoll1,
     .imgRoll3 {
-        left: 40px;
-        top: 115px;
+        /* left: 40px;
+        top: 115px; */
         height: 40px;
-        animation: rollImg1res2 7s infinite;
-        visibility: hidden;
+        /* animation: rollImg1res2 7s infinite;
+        visibility: hidden; */
     }
     .imgRoll2,
     .imgRoll4 {
-        left: 40px;
-        top: 115px;
+        /* left: 40px;
+        top: 115px; */
         height: 40px;
-        animation: rollImg2res2 7s infinite;
+        /* animation: rollImg2res2 7s infinite;
         animation-delay: 1.7s;
-        visibility: hidden;
+        visibility: hidden; */
     }
     .imgRoll3 {
         animation-delay: 3.3s;
@@ -497,9 +490,6 @@
         top: 205px;
         height: 72px;
         width: 76px;
-    }
-    .containner .machineDetails {
-        width: 100%;
     }
     .conveyorSpeed {
         left: 0px;
@@ -571,6 +561,36 @@
             transparent 20%
         );
     }
+    .containner .machineDetails .imgContainner .box1 {
+        width: 255px;
+        height: 132px;
+        top: 63px;
+        left: 27px;
+    }
+    .containner .machineDetails .imgContainner .box2 {
+        width: 36px;
+        height: 132px;
+        top: 63px;
+        left: 368px;
+    }
+    .containner .machineDetails .imgContainner .box3 {
+        width: 17px;
+        height: 137px;
+        top: 62px;
+        left: 488px;
+    }
+    .containner .machineDetails .imgContainner .eject-count {
+        top: -75px;
+        left: 535px;
+    }
+    .containner .machineDetails .imgContainner .reject-count {
+        top: 265px;
+        left: 580px;
+    }
+    .containner .machineDetails .imgContainner .efficiency-count {
+        top: -125px;
+        left: 350px;
+    }
 }
 
 @media screen and (max-width: 960px) {
@@ -583,32 +603,111 @@
 }
 
 @media screen and (max-width: 700px) {
-    .containner .imgContainner {
+    .containner .imgContainner .machineDetails {
+        /* position: relative; */
         width: 100%;
-        overflow: scroll;
+        height: 100%;
+        /* display: flex; */
+        /* justify-content: center;
+        align-items: center; */
     }
-    .containner .navbar {
+    .containner .imgContainner {
+        width: fit-content;
+        rotate: 90deg;
+        margin-left: -55% !important;
+        /* position: absolute; */
+        /* top: -10px;
+        left: -140px; */
+    }
+    .containner .imgContainner .suka {
+        /* width: 700px; */
+    }
+    /* .containner .machineDetails .imgContainner .svgRes2 {
+        display: block;
+    } */
+    /* .containner .machineDetails .imgContainner .svgRes3 {
         display: none;
-    }
-    .machineSessionInfo {
-        flex-direction: column;
-    }
+        stroke-width: 2px;
+        rotate: 90deg;
+    } */
+    /* .containner .navbar {
+        display: none;
+    } */
     .containner .machineDetails {
-        margin-left: 0px;
+        /* margin-left: 0px; */
+        /* padding-left: -10px; */
+        /* align-items: center; */
+        /* justify-content: center; */
     }
     .containner .machineDetails .machineInfo {
-        flex-direction: column;
+        /* flex-direction: column; */
+    }
+    .containner .machineDetails .imgContainner .box1 {
+        /* width: 134px;
+        height: 71px;
+        top: 35px;
+        left: 17px; */
+        /* rotate: 90deg; */
+    }
+    .containner .machineDetails .imgContainner .box2 {
+        /* width: 19px;
+        height: 71px;
+        top: 35px;
+        left: 202px; */
+        /* rotate: 90deg; */
+    }
+    .containner .machineDetails .imgContainner .box3 {
+        /* width: 8px;
+        height: 72px;
+        top: 36px;
+        left: 265px; */
+        /* rotate: 90deg; */
+    }
+    .containner .machineDetails .imgContainner {
+    }
+    .containner .machineDetails .imgContainner .eject-count {
+        top: -75px;
+        left: 535px;
+        rotate: -90deg;
+        font-size: 12px;
+    }
+    .containner .machineDetails .imgContainner .reject-count {
+        top: 265px;
+        left: 580px;
+        rotate: -90deg;
+        font-size: 12px;
+    }
+    .containner .machineDetails .imgContainner .error {
+        top: -20px;
+        rotate: -90deg;
+        z-index: 11;
+        font-size: 12px;
     }
 }
 
-.box {
-    width: 266px;
-    height: 157px;
-    clip-path: polygon(59% 2%, 107% 37%, 100% 95%, 4% 29%);
-    background-color: transparent;
+.box1 {
+    width: 375px;
+    height: 190px;
+    top: 95px;
+    left: 42px;
+}
+.box2 {
+    width: 48px;
+    height: 197px;
+    top: 95px;
+    left: 552px;
+}
+.box3 {
+    width: 27px;
+    height: 200px;
+    top: 94px;
+    left: 722px;
+}
+.box1,
+.box2,
+.box3 {
     position: absolute;
-    top: 56px;
-    left: 100px;
+    background-color: transparent;
     background-image: repeating-linear-gradient(
         90deg,
         gray 0%,
@@ -617,19 +716,16 @@
         transparent 20%
     );
     background-size: 40px 100%;
-    animation: moveDashes 1s linear infinite;
-    z-index: 2;
-}
-.demoSvg {
-    position: relative;
+    animation: moveDashes 0.7s linear infinite;
 }
 .svgRes1 {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 1160px;
-    height: 572px;
+    width: 1040px;
+    height: 350px;
     z-index: 3;
+    /* display: none; */
     /* background-color: green; */
 }
 .svgRes2 {
@@ -637,14 +733,38 @@
     top: 0px;
     left: 0px;
     width: 700px;
-    height: 345px;
+    height: 236px;
     z-index: 4;
     display: none;
     /* background-color: red; */
 }
+.svgRes3 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 380px;
+    height: 228px;
+    z-index: 5;
+    display: none;
+    /* background-color: red; */
+}
+.svgRes1,
+.svgRes2,
+.svgRes3 {
+    transition: stroke 0.5s ease-in-out, stroke-width 0.5s, fill 0.5s;
+    stroke: rgb(0, 255, 0);
+    stroke-width: 2px;
+}
+.stopPoly {
+    stroke: white;
+}
+.errorPoly {
+    stroke: red;
+}
 .poly {
     transition: stroke 0.5s ease-in-out, stroke-width 0.5s, fill 0.5s;
     animation: moveDashes 2s linear infinite;
+    cursor: pointer;
     /* background-image: repeating-linear-gradient(
         90deg,
         gray 0%,
@@ -653,13 +773,12 @@
         transparent 20%
     ); */
 }
-.poly:hover {
-    /* border: 2px solid black; */
+/* .poly:hover {
     transition: stroke 0.5s ease-in-out, stroke-width 0.5s, fill 0.5s;
     stroke: rgb(0, 255, 0);
     stroke-width: 4px;
     cursor: pointer;
-}
+} */
 
 @keyframes moveDashes {
     0% {
@@ -669,29 +788,32 @@
         background-position: 40px 0;
     }
 }
-/* .box{
-    height: 200px;
-    width: 200px;
-    background-color: aqua;
-    background-image: conic-gradient(red 64% , black 0%);
-    border-radius: 50%;
-    margin-left: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    rotate: 180deg;
-}
-.innerBox{
-    height: 50px;
-    width: 50px;
+.eject-count,
+.reject-count,
+.efficiency-count,
+.error {
+    background-color: #283142;
+    width: fit-content;
+    position: absolute;
+    box-shadow: black 2px 3px 4px 1px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    height: 80%;
-    width: 80%;
-    border-radius: 50%;
-    rotate: -180deg;
-} */
+    color: white;
+    padding: 10px;
+}
+
+.error {
+    border: 1px solid red;
+}
+.eject-count {
+    top: -75px;
+    left: 775px;
+}
+.reject-count {
+    overflow: visible;
+    top: -75px;
+    left: 925px;
+}
+.efficiency-count {
+    top: -105px;
+    left: 350px;
+}
