@@ -4,7 +4,7 @@
     /* left: 30px; */
     /* top: 90px; */
     left: 1.8%;
-    top: 25%;
+    top: 21%;
     animation: rollImg1res1 12s linear infinite;
     /* animation-duration: 7s; */
     visibility: hidden;
@@ -13,21 +13,20 @@
 .imgRoll4 {
     position: absolute;
     left: 2.3%;
-    top: 40%;
+    top: 35%;
     animation: rollImg1res1 12s linear infinite;
     /* animation-duration: 7s; */
     visibility: hidden;
-
     animation-delay: 4.8s;
 }
 .imgRoll3 {
-    top: 53%;
+    top: 47%;
     animation-delay: 1.7s;
 }
 .imgRoll4 {
     animation-delay: 3.3s;
     scale: 0.8;
-    top: 65%;
+    top: 58%;
 }
 .ejectCount,
 .ignoreCount,
@@ -204,10 +203,8 @@
     }
 }
 
-/* @keyframes rollImg2res1 {
+@keyframes rollImg1res2 {
     0% {
-        left: 30px;
-        top: 90px;
         visibility: visible;
     }
     50% {
@@ -226,82 +223,16 @@
         visibility: hidden;
     }
     100% {
-        left: 715px;
-        top: 90px;
+        top: 64%;
         visibility: visible;
-    }
-} */
-
-@keyframes rollImg1res2 {
-    0% {
-        left: 40px;
-        top: 122px;
-        rotate: 0deg;
-        visibility: visible;
-    }
-    25% {
-        left: 193px;
-        top: 122px;
-        visibility: hidden;
-        rotate: 0deg;
-    }
-    50% {
-        left: 320px;
-        top: 122px;
-        visibility: hidden;
-        rotate: 0deg;
-    }
-    75% {
-        left: 490px;
-        top: 122px;
-        rotate: 0deg;
-        visibility: visible;
-    }
-    100% {
-        left: 550px;
-        top: 245px;
-        visibility: visible;
-        rotate: 460deg;
     }
 }
-
-/* @keyframes rollImg2res2 {
-    0% {
-        left: 40px;
-        top: 122px;
-        rotate: 0deg;
-        visibility: visible;
-    }
-    25% {
-        left: 193px;
-        top: 122px;
-        visibility: hidden;
-        rotate: 0deg;
-    }
-    50% {
-        left: 320px;
-        top: 122px;
-        visibility: hidden;
-        rotate: 0deg;
-    }
-    75% {
-        left: 490px;
-        top: 122px;
-        rotate: 0deg;
-        visibility: visible;
-    }
-    100% {
-        left: 640px;
-        top: 205px;
-        visibility: visible;
-        rotate: 460deg;
-    }
-} */
 .containner {
     display: flex;
     width: 100%;
     height: 100%;
     background-color: gainsboro;
+    font-size: 2rem;
 }
 
 .containner .navbar {
@@ -317,21 +248,15 @@
 }
 .containner .machineDetails .imgContainner {
     display: flex;
-    margin: auto;
-    /* background-color: gray; */
+    margin: 30px auto;
     flex-direction: column;
     position: relative;
 }
-/* .containner .machineDetails .imgContainner{
-    margin: auto;
-} */
 .containner .imgContainner .suka {
     background-color: aqua;
     width: 1040px;
-    /* scale: 1.5; */
     background-color: #1b2531;
     transition: transform 2s;
-    /* animation: scaleDown 0.02s forwards; */
 }
 .containner .machineDetails {
     padding-left: 260px;
@@ -388,10 +313,12 @@
     align-items: center;
     flex-direction: column;
     color: white;
+    /* padding: 10px; */
     font-weight: 100;
 }
 .containner .machineDetails .machineInfo .machineSessionInfo div img {
     height: 30px;
+    margin: 5px 0px;
     /* aspect-ratio: 3/2;
     object-fit: contain; */
 }
@@ -433,7 +360,6 @@
 
 @media screen and (max-width: 1300px) {
     .containner .imgContainner .suka {
-        /* background-color: red; */
         width: 700px;
     }
     .containner .machineDetails .imgContainner .svgRes1 {
@@ -444,26 +370,13 @@
     }
     .imgRoll1,
     .imgRoll3 {
-        /* left: 40px;
-        top: 115px; */
         height: 40px;
-        /* animation: rollImg1res2 7s infinite;
-        visibility: hidden; */
+        animation-duration: 8.2s;
     }
     .imgRoll2,
     .imgRoll4 {
-        /* left: 40px;
-        top: 115px; */
         height: 40px;
-        /* animation: rollImg2res2 7s infinite;
-        animation-delay: 1.7s;
-        visibility: hidden; */
-    }
-    .imgRoll3 {
-        animation-delay: 3.3s;
-    }
-    .imgRoll4 {
-        animation-delay: 4.8s;
+        animation-duration: 8.2s;
     }
     .ejectCount {
         left: 510px;
@@ -580,16 +493,40 @@
         left: 488px;
     }
     .containner .machineDetails .imgContainner .eject-count {
-        top: -75px;
+        top: -55px;
         left: 535px;
     }
     .containner .machineDetails .imgContainner .reject-count {
-        top: 265px;
+        top: 235px;
         left: 580px;
     }
-    .containner .machineDetails .imgContainner .efficiency-count {
-        top: -125px;
-        left: 350px;
+    .containner .machineDetails .imgContainner .conveyor-speed {
+        top: -20px;
+        left: 10px;
+    }
+    .containner .machineDetails .imgContainner .cpu-temp {
+        top: -30px;
+        left: 280px;
+    }
+    .containner .machineDetails .imgContainner .gpu-temp {
+        top: 110px;
+        left: 230px;
+    }
+    .containner .machineDetails .imgContainner .panal-temp {
+        top: 170px;
+        left: 230px;
+    }
+    .containner .machineDetails .imgContainner .left-cam {
+        top: -15px;
+        left: 330px;
+    }
+    .containner .machineDetails .imgContainner .right-cam {
+        top: 210px;
+        left: 380px;
+    }
+    .containner .machineDetails .imgContainner .motor-ampere {
+        top: -30px;
+        left: 340px;
     }
 }
 
@@ -603,88 +540,144 @@
 }
 
 @media screen and (max-width: 700px) {
-    .containner .imgContainner .machineDetails {
-        /* position: relative; */
-        width: 100%;
-        height: 100%;
-        /* display: flex; */
-        /* justify-content: center;
-        align-items: center; */
+    * {
+        font-size: 0.75rem;
     }
-    .containner .imgContainner {
-        width: fit-content;
-        rotate: 90deg;
-        margin-left: -55% !important;
-        /* position: absolute; */
-        /* top: -10px;
-        left: -140px; */
+    .containner .machineDetails .machineName h4 {
+        padding: 7px;
     }
     .containner .imgContainner .suka {
-        /* width: 700px; */
+        content: url("/assets/images/suka-top-view-rotated.png");
+        /* height: 500px; */
+        width: 236px;
+        height: 500px;
     }
-    /* .containner .machineDetails .imgContainner .svgRes2 {
+    .containner .machineDetails .imgContainner .svgRes2 {
+        display: none;
+    }
+    .containner .machineDetails .imgContainner .svgRes3 {
         display: block;
-    } */
-    /* .containner .machineDetails .imgContainner .svgRes3 {
-        display: none;
         stroke-width: 2px;
-        rotate: 90deg;
-    } */
-    /* .containner .navbar {
-        display: none;
-    } */
-    .containner .machineDetails {
-        /* margin-left: 0px; */
-        /* padding-left: -10px; */
-        /* align-items: center; */
-        /* justify-content: center; */
-    }
-    .containner .machineDetails .machineInfo {
-        /* flex-direction: column; */
     }
     .containner .machineDetails .imgContainner .box1 {
-        /* width: 134px;
-        height: 71px;
-        top: 35px;
-        left: 17px; */
-        /* rotate: 90deg; */
+        width: 131px;
+        height: 212px;
+        top: 28px;
+        left: 40px;
+        background-image: repeating-linear-gradient(
+            0deg,
+            gray 0%,
+            gray 10%,
+            transparent 10%,
+            transparent 20%
+        );
+        background-size: 100% 40px;
+        animation: moveDashesY 0.7s linear infinite;
     }
     .containner .machineDetails .imgContainner .box2 {
-        /* width: 19px;
-        height: 71px;
-        top: 35px;
-        left: 202px; */
-        /* rotate: 90deg; */
+        width: 136px;
+        height: 31px;
+        top: 318px;
+        left: 39px;
+        background-image: repeating-linear-gradient(
+            0deg,
+            gray 0%,
+            gray 10%,
+            transparent 10%,
+            transparent 20%
+        );
+        background-size: 100% 40px;
+        animation: moveDashesY 0.7s linear infinite;
     }
     .containner .machineDetails .imgContainner .box3 {
-        /* width: 8px;
-        height: 72px;
-        top: 36px;
-        left: 265px; */
-        /* rotate: 90deg; */
+        width: 139px;
+        height: 19px;
+        top: 416px;
+        left: 36px;
+        background-image: repeating-linear-gradient(
+            0deg,
+            gray 0%,
+            gray 10%,
+            transparent 10%,
+            transparent 20%
+        );
+        background-size: 100% 40px;
+        animation: moveDashesY 0.7s linear infinite;
     }
-    .containner .machineDetails .imgContainner {
+    .imgRoll1,
+    .imgRoll3 {
+        height: 40px;
+        animation: rollImg1res2 7.8s linear infinite;
+        visibility: hidden;
+        rotate: 90deg;
+    }
+    .imgRoll2,
+    .imgRoll4 {
+        height: 40px;
+        animation: rollImg1res2 7.8s linear infinite;
+        animation-delay: 4.8s;
+        visibility: hidden;
+        rotate: 90deg;
+    }
+    .imgRoll1 {
+        left: 137px;
+        top: 26px;
+    }
+    .imgRoll2 {
+        top: 26px;
+        left: 40px;
+    }
+    .imgRoll3 {
+        top: 26px;
+        left: 73px;
+        animation-delay: 1.7s;
+    }
+    .imgRoll4 {
+        top: 26px;
+        left: 100px;
+        animation-delay: 3.3s;
     }
     .containner .machineDetails .imgContainner .eject-count {
-        top: -75px;
-        left: 535px;
-        rotate: -90deg;
-        font-size: 12px;
+        top: 480px;
+        left: 210px;
     }
     .containner .machineDetails .imgContainner .reject-count {
-        top: 265px;
-        left: 580px;
-        rotate: -90deg;
-        font-size: 12px;
+        top: 520px;
+        left: -90px;
     }
-    .containner .machineDetails .imgContainner .error {
-        top: -20px;
-        rotate: -90deg;
-        z-index: 11;
-        font-size: 12px;
+    .containner .machineDetails .imgContainner .conveyor-speed {
+        top: 80px;
+        left: -50px;
+    }
+    .containner .machineDetails .imgContainner .cpu-temp {
+        top: 290px;
+        left: 210px;
+    }
+    .containner .machineDetails .imgContainner .gpu-temp {
+        top: 310px;
+        left: 130px;
+    }
+    .containner .machineDetails .imgContainner .panal-temp {
+        top: 210px;
+        left: -30px;
+    }
+    .containner .machineDetails .imgContainner .left-cam {
+        top: 290px;
+        left: 190px;
+    }
+    .containner .machineDetails .imgContainner .right-cam {
+        top: 280px;
+        left: -30px;
+    }
+    .containner .machineDetails .imgContainner .motor-ampere {
+        top: 300px;
+        left: 210px;
+    }
+    .containner .machineDetails .machineInfo .machineSessionInfo div {
+        margin: 5px 10px;
+        padding: 5px;
     }
 }
-
 .box1 {
     width: 375px;
     height: 190px;
@@ -742,8 +735,8 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 380px;
-    height: 228px;
+    width: 236px;
+    height: 600px;
     z-index: 5;
     display: none;
     /* background-color: red; */
@@ -765,13 +758,6 @@
     transition: stroke 0.5s ease-in-out, stroke-width 0.5s, fill 0.5s;
     animation: moveDashes 2s linear infinite;
     cursor: pointer;
-    /* background-image: repeating-linear-gradient(
-        90deg,
-        gray 0%,
-        gray 10%,
-        transparent 10%,
-        transparent 20%
-    ); */
 }
 /* .poly:hover {
     transition: stroke 0.5s ease-in-out, stroke-width 0.5s, fill 0.5s;
@@ -788,9 +774,24 @@
         background-position: 40px 0;
     }
 }
+@keyframes moveDashesY {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 40px;
+    }
+}
 .eject-count,
 .reject-count,
 .efficiency-count,
+.conveyor-speed,
+.cpu-temp,
+.gpu-temp,
+.panal-temp,
+.left-cam,
+.right-cam,
+.motor-ampere,
 .error {
     background-color: #283142;
     width: fit-content;
@@ -799,21 +800,52 @@
     text-align: center;
     color: white;
     padding: 10px;
+    z-index: 6;
 }
 
 .error {
     border: 1px solid red;
+    top: 60px;
+    left: 10px;
 }
 .eject-count {
-    top: -75px;
+    top: -10px;
     left: 775px;
 }
 .reject-count {
     overflow: visible;
-    top: -75px;
+    top: -10px;
     left: 925px;
 }
 .efficiency-count {
     top: -105px;
     left: 350px;
+}
+.conveyor-speed {
+    top: -20px;
+    left: 10px;
+}
+.cpu-temp {
+    top: -30px;
+    left: 450px;
+}
+.gpu-temp {
+    top: 150px;
+    left: 370px;
+}
+.panal-temp {
+    top: 260px;
+    left: 370px;
+}
+.left-cam {
+    top: -15px;
+    left: 530px;
+}
+.right-cam {
+    top: 310px;
+    left: 650px;
+}
+.motor-ampere {
+    top: -30px;
+    left: 550px;
 }

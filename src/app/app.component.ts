@@ -21,6 +21,9 @@ export class AppComponent implements AfterViewInit, OnInit {
     rejectedCount: number = 124587;
     gpuTemperature: number = 65;
     cpuTemperature: number = 62;
+    panalTemperature: number = 42;
+    leftcamTemperature: number = 61;
+    rightcamTemperature: number = 62;
     machineRunning: boolean = true;
     conveyorSpeed: number = 3.21;
     motorAmpere: number = 5.19;
@@ -85,8 +88,10 @@ export class AppComponent implements AfterViewInit, OnInit {
         }, 1000);
         setTimeout(() => {
             this.errorArray['conveyorError'] = true;
-            console.log(this.errorArray['conveyorError']);
         }, 5000);
+        setTimeout(() => {
+            delete this.errorArray['conveyorError'];
+        }, 15000);
     }
     updateEjectedValues() {
         this.ejectedCount += Math.floor(Math.random() * 10);
@@ -150,5 +155,16 @@ export class AppComponent implements AfterViewInit, OnInit {
     getCord() {
         console.log(this.cord);
         this.cord = '';
+    }
+    hoverObject: any = {};
+    onHover(component: any) {
+        if (window.innerWidth > 700) {
+            this.hoverObject[component] = true;
+        }
+    }
+    onLostFocus(component: any) {
+        if (window.innerWidth > 700) {
+            delete this.hoverObject[component];
+        }
     }
 }

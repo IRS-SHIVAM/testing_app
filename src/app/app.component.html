@@ -9,30 +9,32 @@
             <h4>{{ serverData.deviceId }}</h4>
         </div>
 
-        <!-- <div class="machineInfo">
-      <div class="machineImg">
-        <img src="/assets/images/machine.webp" alt="machine">
-        <h4 [ngClass]="machineRunning ? 'machineRunning' : 'machineStop'">Running</h4>
-      </div>
-      <div class="machineSessionInfo">
-        <div>
-          <img src="/assets/logo/sessionCount.png" alt="sessionCount"/>
-          sessionCount : {{ serverData.sessionCount }}
+        <div class="machineInfo">
+            <div class="machineSessionInfo">
+                <div>
+                    <!-- <img
+                        src="/assets/logo/sessionCount.png"
+                        alt="sessionCount"
+                    /> -->
+                    sessionCount : {{ serverData.sessionCount }}
+                </div>
+                <div>
+                    <!-- <img
+                        src="/assets/logo/sessionDateTime.png"
+                        alt="sessionDateTime"
+                    /> -->
+                    {{ serverData.sDate + " " + serverData.sTime }}
+                </div>
+                <div>
+                    <!-- <img src="/assets/logo/efficiency.png" alt="efficiency" /> -->
+                    efficiency : {{ serverData.Efficiency + "%" }}
+                </div>
+                <div>
+                    <!-- <img src="/assets/logo/recipe.png" alt="recipe" /> -->
+                    recipe : {{ serverData.selectedRecipe }}
+                </div>
+            </div>
         </div>
-        <div>
-          <img src="/assets/logo/sessionDateTime.png" alt="sessionDateTime" />
-          {{ serverData.sDate + " " + serverData.sTime }}
-        </div>
-        <div>
-          <img src="/assets/logo/efficiency.png" alt="efficiency" />
-          efficiency : {{ serverData.Efficiency + "%"}}
-        </div>
-        <div>
-          <img src="/assets/logo/recipe.png" alt="recipe" />
-          recipe : {{ serverData.selectedRecipe }}
-        </div>
-      </div>
-    </div> -->
         <div class="imgContainner">
             <img
                 src="assets/images/suka-top-view.png"
@@ -50,6 +52,8 @@
                     fill="transparent"
                     [class.errorPoly]="errorArray['conveyorError']"
                     #poly
+                    (mouseenter)="onHover('conveyorSpeed')"
+                    (mouseleave)="onLostFocus('conveyorSpeed')"
                 />
                 <!-- cpu -->
                 <polygon
@@ -57,6 +61,8 @@
                     points="497,133 547,133 547,69 497,69"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('cpuTemp')"
+                    (mouseleave)="onLostFocus('cpuTemp')"
                 />
                 <!-- gpu -->
                 <polygon
@@ -64,6 +70,8 @@
                     points="497,158 545,158 545,224 497,224"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('gpuTemp')"
+                    (mouseleave)="onLostFocus('gpuTemp')"
                 />
                 <!-- panal temp -->
                 <polygon
@@ -71,6 +79,8 @@
                     points="497,252 545,252 545,313 497,313"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('panalTemp')"
+                    (mouseleave)="onLostFocus('panalTemp')"
                 />
                 <!-- left cam -->
                 <polygon
@@ -78,12 +88,16 @@
                     points="609,94 678,94 679,185 609,185"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('leftcamTemp')"
+                    (mouseleave)="onLostFocus('leftcamTemp')"
                 />
                 <polygon
                     class="poly"
                     points="610,200 678,200 679,291 609,291"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('rightcamTemp')"
+                    (mouseleave)="onLostFocus('rightcamTemp')"
                 />
                 <!-- eject -->
                 <polygon
@@ -91,6 +105,8 @@
                     points="891,321 801,319 801,63 891,62"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('ejectCount')"
+                    (mouseleave)="onLostFocus('ejectCount')"
                 />
                 <!-- reject -->
                 <polygon
@@ -98,6 +114,8 @@
                     points="913,64 1021,64 1021,322 913,322"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('rejectCount')"
+                    (mouseleave)="onLostFocus('rejectCount')"
                 />
                 <!-- motor -->
                 <polygon
@@ -105,6 +123,8 @@
                     points="682,39 681,18 694,14 718,13 723,10 730,18 739,18 739,8 751,11 750,19 766,19 769,57 731,61 730,40 722,41 717,38 697,40 696,42"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('motorAmpere')"
+                    (mouseleave)="onLostFocus('motorAmpere')"
                 />
                 <!--hood motor -->
                 <polygon
@@ -122,6 +142,8 @@
                     fill="transparent"
                     #poly
                     [class.errorPoly]="errorArray['conveyorError']"
+                    (mouseenter)="onHover('conveyorSpeed')"
+                    (mouseleave)="onLostFocus('conveyorSpeed')"
                 />
                 <!-- cpu -->
                 <polygon
@@ -129,6 +151,8 @@
                     points="333,88 367,88 367,50 333,50"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('cpuTemp')"
+                    (mouseleave)="onLostFocus('cpuTemp')"
                 />
                 <!-- gpu -->
                 <polygon
@@ -136,6 +160,8 @@
                     points="333,108 367,108 367,152 333,152"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('gpuTemp')"
+                    (mouseleave)="onLostFocus('gpuTemp')"
                 />
                 <!-- panal temp -->
                 <polygon
@@ -143,6 +169,8 @@
                     points="333,169 367,169 367,207 333,207"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('panalTemp')"
+                    (mouseleave)="onLostFocus('panalTemp')"
                 />
                 <!-- left cam -->
                 <polygon
@@ -150,12 +178,16 @@
                     points="409,64 456,64 456,125 409,125"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('leftcamTemp')"
+                    (mouseleave)="onLostFocus('leftcamTemp')"
                 />
                 <polygon
                     class="poly"
                     points="409,135 456,135 456,194 409,194"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('rightcamTemp')"
+                    (mouseleave)="onLostFocus('rightcamTemp')"
                 />
                 <!-- eject -->
                 <polygon
@@ -163,6 +195,8 @@
                     points="538,42 600,42 600,216 538,216"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('ejectCount')"
+                    (mouseleave)="onLostFocus('ejectCount')"
                 />
                 <!-- reject -->
                 <polygon
@@ -170,6 +204,8 @@
                     points="615,42 685,42 685,216 615,216"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('rejectCount')"
+                    (mouseleave)="onLostFocus('rejectCount')"
                 />
                 <!-- motor -->
                 <polygon
@@ -177,6 +213,8 @@
                     points="459,10 483,11 486,6 491,14 516,12 516,40 507,40 505,43 493,43 491,28 485,32 483,27 458,26"
                     fill="transparent"
                     #poly
+                    (mouseenter)="onHover('motorAmpere')"
+                    (mouseleave)="onLostFocus('motorAmpere')"
                 />
                 <!--hood motor -->
                 <polygon
@@ -186,12 +224,102 @@
                     #poly
                 />
             </svg>
+            <svg class="svgRes3" [class.stopPoly]="isStop">
+                <!-- Conveyor -->
+                <polygon
+                    class="poly"
+                    points="41,26 175,26 175,240 41,240"
+                    fill="transparent"
+                    #poly
+                    [class.errorPoly]="errorArray['conveyorError']"
+                    (mouseenter)="onHover('conveyorSpeed')"
+                    (mouseleave)="onLostFocus('conveyorSpeed')"
+                />
+                <!-- cpu -->
+                <polygon
+                    class="poly"
+                    points="145,285 145,315 189,315 189,285"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="onHover('cpuTemp')"
+                    (mouseleave)="onLostFocus('cpuTemp')"
+                />
+                <!-- gpu -->
+                <polygon
+                    class="poly"
+                    points="130,315 86,315 86,285 130,285"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="onHover('gpuTemp')"
+                    (mouseleave)="onLostFocus('gpuTemp')"
+                />
+                <!-- panal temp -->
+                <polygon
+                    class="poly"
+                    points="26,285 69,285 69,315 26,315"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="onHover('panalTemp')"
+                    (mouseleave)="onLostFocus('panalTemp')"
+                />
+                <!-- left cam -->
+                <polygon
+                    class="poly"
+                    points="115,350 175,350 175,392 115,392"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="onHover('leftcamTemp')"
+                    (mouseleave)="onLostFocus('leftcamTemp')"
+                />
+                <polygon
+                    class="poly"
+                    points="42,350 102,350 102,392 42,392"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="onHover('rightcamTemp')"
+                    (mouseleave)="onLostFocus('rightcamTemp')"
+                />
+                <!-- eject -->
+                <polygon
+                    class="poly"
+                    points="22,511 195,511 195,466 22,466"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="onHover('ejectCount')"
+                    (mouseleave)="onLostFocus('ejectCount')"
+                />
+                <!-- reject -->
+                <polygon
+                    class="poly"
+                    points="22,528 195,528 195,577 22,577"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="onHover('rejectCount')"
+                    (mouseleave)="onLostFocus('rejectCount')"
+                />
+                <!-- motor -->
+                <polygon
+                    class="poly"
+                    points="212,396 229,395 231,418 231,431 226,443 199,444 201,418 212,416"
+                    fill="transparent"
+                    #poly
+                    (mouseenter)="onHover('motorAmpere')"
+                    (mouseleave)="onLostFocus('motorAmpere')"
+                />
+                <!--hood motor -->
+                <polygon
+                    class="poly"
+                    points="22,472 21,488 21,509 7,508 5,493 11,478"
+                    fill="transparent"
+                    #poly
+                />
+            </svg>
             <div class="box1" [style.display]="isStop ? 'none' : 'block'"></div>
             <div class="box2" [style.display]="isStop ? 'none' : 'block'"></div>
             <div class="box3" [style.display]="isStop ? 'none' : 'block'"></div>
-            <!-- <button (click)="getCord()" style="margin-top: 20px">
+            <button (click)="getCord()" style="margin-top: 20px">
                 Give Cordinate
-            </button> -->
+            </button>
             <img
                 src="/assets/images/img1.png"
                 alt="imgRoll"
@@ -222,26 +350,72 @@
                 loading="lazy"
             />
             <app-machine-info
+                *ngIf="hoverObject.ejectCount"
                 class="eject-count"
                 [lable]="'eject-count'"
                 [lableValue]="ejectedCount"
                 [lableClass]="'eject-count-text'"
             ></app-machine-info>
             <app-machine-info
+                *ngIf="hoverObject.rejectCount"
                 class="reject-count"
                 [lable]="'reject-count'"
                 [lableValue]="rejectedCount"
                 [lableClass]="'reject-count-text'"
             ></app-machine-info>
             <app-machine-info
-                class="efficiency-count"
-                [lable]="'efficiency-count'"
-                [lableValue]="serverData.Efficiency + '%'"
-                [lableClass]="'efficiency-text'"
+                *ngIf="hoverObject.conveyorSpeed"
+                class="conveyor-speed"
+                [lable]="'conveyor-speed'"
+                [lableValue]="conveyorSpeed + 'm/s'"
+                [lableClass]="'conveyort-speed-text'"
+            ></app-machine-info>
+            <app-machine-info
+                *ngIf="hoverObject.cpuTemp"
+                class="cpu-temp"
+                [lable]="'CPU-temp'"
+                [lableValue]="cpuTemperature + '&deg;C'"
+                [lableClass]="'cpu-temp-text'"
+            ></app-machine-info>
+            <app-machine-info
+                *ngIf="hoverObject.gpuTemp"
+                class="gpu-temp"
+                [lable]="'GPU-temp'"
+                [lableValue]="gpuTemperature + '&deg;C'"
+                [lableClass]="'gpu-temp-text'"
+            ></app-machine-info>
+            <app-machine-info
+                *ngIf="hoverObject.panalTemp"
+                class="panal-temp"
+                [lable]="'panal-temp'"
+                [lableValue]="panalTemperature + '&deg;C'"
+                [lableClass]="'panal-temp-text'"
+            ></app-machine-info>
+            <app-machine-info
+                *ngIf="hoverObject.leftcamTemp"
+                class="left-cam"
+                [lable]="'left camera-temp'"
+                [lableValue]="leftcamTemperature + '&deg;C'"
+                [lableClass]="'left-cam-text'"
+            ></app-machine-info>
+            <app-machine-info
+                *ngIf="hoverObject.rightcamTemp"
+                class="right-cam"
+                [lable]="'right camera-temp'"
+                [lableValue]="rightcamTemperature + '&deg;C'"
+                [lableClass]="'right-cam-text'"
+            ></app-machine-info>
+            <app-machine-info
+                *ngIf="hoverObject.motorAmpere"
+                class="motor-ampere"
+                [lable]="'motor ampere'"
+                [lableValue]="motorAmpere + 'A'"
+                [lableClass]="'motor-ampere-text'"
             ></app-machine-info>
             <div class="error" *ngIf="errorArray['conveyorError']">
-                conveyorSpeed increased 3.5 m/s
+                conveyorSpeed increased {{ conveyorSpeed }} m/s
             </div>
+            <!-- <div class="machine">Details box</div> -->
         </div>
         <!-- <div class="machineLog">
             <h4 class="machineLogHeading">Logs</h4>

@@ -1,20 +1,27 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
-    font-size: 1.125rem;
+    font-size: 16px;
     line-height: 1.4em;
     font-weight: 300;
     font-family: Arial;
 }
-.cpuText{
+.cpuText {
     background-color: red;
 }
-.gpuText , .cpuText , .speedText , .motorText, .visionText , .sessionCountText , .sessionDateTimeText, .recipeText{
+.gpuText,
+.cpuText,
+.speedText,
+.motorText,
+.visionText,
+.sessionCountText,
+.sessionDateTimeText,
+.recipeText {
     font-size: 13px;
-    background-color: #1B2531;
+    background-color: #1b2531;
     font-weight: bold;
 }
-.efficiencyText{
+.efficiencyText {
     font-size: 13px;
     background-color: rgb(190, 190, 190);
     font-weight: bold;
