@@ -1,6 +1,5 @@
 import {
     AfterViewInit,
-    ChangeDetectionStrategy,
     Component,
     ElementRef,
     OnInit,
@@ -63,7 +62,7 @@ export class AppComponent implements AfterViewInit, OnInit {
         ],
     };
     errorArray: any = [];
-
+    hoverObject: any = {};
     constructor() {
         setInterval(() => {
             this.updateEjectedValues();
@@ -86,12 +85,31 @@ export class AppComponent implements AfterViewInit, OnInit {
                 icon.style.display = 'none';
             }
         }, 1000);
-        setTimeout(() => {
+        setInterval(() => {
             this.errorArray['conveyorError'] = true;
+            delete this.errorArray['cpuTempError'];
         }, 5000);
-        setTimeout(() => {
+        setInterval(() => {
+            this.errorArray['cpuTempError'] = true;
+            this.errorArray['rightCamTempError'] = true;
+        }, 2000);
+        setInterval(() => {
+            this.errorArray['gpuTempError'] = true;
+        }, 3000);
+        setInterval(() => {
             delete this.errorArray['conveyorError'];
         }, 15000);
+        setInterval(() => {
+            delete this.errorArray['gpuTempError'];
+            delete this.errorArray['rightCamTempError'];
+        }, 10000);
+
+        if (window.innerWidth > 700) {
+            this.hoverObject = {
+                ejectCount: true,
+                rejectCount: true,
+            };
+        }
     }
     updateEjectedValues() {
         this.ejectedCount += Math.floor(Math.random() * 10);
@@ -122,8 +140,6 @@ export class AppComponent implements AfterViewInit, OnInit {
     cord: any = '';
     getImageCord(event: any) {
         this.cord += event?.offsetX + ',' + event?.offsetY + ' ';
-        // console.log(event?.offsetX);
-        // console.log(event?.offsetY);
     }
 
     loadGoogleTranslate() {
@@ -156,7 +172,6 @@ export class AppComponent implements AfterViewInit, OnInit {
         console.log(this.cord);
         this.cord = '';
     }
-    hoverObject: any = {};
     onHover(component: any) {
         if (window.innerWidth > 700) {
             this.hoverObject[component] = true;
