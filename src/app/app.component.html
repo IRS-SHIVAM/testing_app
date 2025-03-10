@@ -107,8 +107,6 @@
                     points="891,321 801,319 801,63 891,62"
                     fill="transparent"
                     #poly
-                    (mouseenter)="onHover('ejectCount')"
-                    (mouseleave)="onLostFocus('ejectCount')"
                 />
                 <!-- reject -->
                 <polygon
@@ -116,8 +114,6 @@
                     points="913,64 1021,64 1021,322 913,322"
                     fill="transparent"
                     #poly
-                    (mouseenter)="onHover('rejectCount')"
-                    (mouseleave)="onLostFocus('rejectCount')"
                 />
                 <!-- motor -->
                 <polygon
@@ -199,8 +195,6 @@
                     points="538,42 600,42 600,216 538,216"
                     fill="transparent"
                     #poly
-                    (mouseenter)="onHover('ejectCount')"
-                    (mouseleave)="onLostFocus('ejectCount')"
                 />
                 <!-- reject -->
                 <polygon
@@ -208,8 +202,6 @@
                     points="615,42 685,42 685,216 615,216"
                     fill="transparent"
                     #poly
-                    (mouseenter)="onHover('rejectCount')"
-                    (mouseleave)="onLostFocus('rejectCount')"
                 />
                 <!-- motor -->
                 <polygon
@@ -300,8 +292,6 @@
                     points="309,21 309,107 337,107 337,21"
                     fill="transparent"
                     #poly
-                    (mouseenter)="onHover('rejectCount')"
-                    (mouseleave)="onLostFocus('rejectCount')"
                 />
                 <!-- motor -->
                 <polygon
@@ -332,6 +322,7 @@
                 height="70px"
                 class="imgRoll1"
                 loading="lazy"
+                [style.display]="isStop ? 'none' : 'block'"
             />
             <img
                 src="/assets/images/img2.png"
@@ -339,6 +330,7 @@
                 height="70px"
                 class="imgRoll3"
                 loading="lazy"
+                [style.display]="isStop ? 'none' : 'block'"
             />
             <img
                 src="/assets/images/img3.png"
@@ -346,6 +338,7 @@
                 height="70px"
                 class="imgRoll2"
                 loading="lazy"
+                [style.display]="isStop ? 'none' : 'block'"
             />
 
             <img
@@ -354,68 +347,69 @@
                 height="70px"
                 class="imgRoll4"
                 loading="lazy"
+                [style.display]="isStop ? 'none' : 'block'"
             />
             <app-machine-info
                 *ngIf="hoverObject.ejectCount"
                 class="eject-count"
-                [lable]="'eject-count'"
-                [lableValue]="ejectedCount"
+                [lable]="isStop ? '' : 'eject-count'"
+                [lableValue]="isStop ? 'machine stop' : ejectedCount"
                 [lableClass]="'eject-count-text'"
             ></app-machine-info>
             <app-machine-info
                 *ngIf="hoverObject.ejectCount"
                 class="reject-count"
-                [lable]="'reject-count'"
-                [lableValue]="rejectedCount"
+                [lable]="isStop ? 'machine stop' : 'reject-count'"
+                [lableValue]="isStop ? '' : rejectedCount"
                 [lableClass]="'reject-count-text'"
             ></app-machine-info>
             <app-machine-info
                 *ngIf="hoverObject.conveyorSpeed"
                 class="conveyor-speed"
-                [lable]="'conveyor-speed'"
-                [lableValue]="conveyorSpeed + 'm/s'"
+                [lable]="isStop ? 'machine stop' : 'conveyor-speed'"
+                [lableValue]="isStop ? '' : conveyorSpeed + 'm/s'"
                 [lableClass]="'conveyort-speed-text'"
             ></app-machine-info>
             <app-machine-info
                 *ngIf="hoverObject.cpuTemp"
                 class="cpu-temp"
-                [lable]="'CPU-temp'"
-                [lableValue]="cpuTemperature + '&deg;C'"
+                [lable]="isStop ? 'machine stop' : 'CPU-temp'"
+                [lableValue]="isStop ? '' : cpuTemperature + '&deg;C'"
                 [lableClass]="'cpu-temp-text'"
             ></app-machine-info>
             <app-machine-info
                 *ngIf="hoverObject.gpuTemp"
                 class="gpu-temp"
-                [lable]="'GPU-temp'"
-                [lableValue]="gpuTemperature + '&deg;C'"
+                [lable]="isStop ? 'machine stop' : 'GPU-temp'"
+                [lableValue]="isStop ? '' : gpuTemperature + '&deg;C'"
                 [lableClass]="'gpu-temp-text'"
             ></app-machine-info>
             <app-machine-info
                 *ngIf="hoverObject.panalTemp"
                 class="panal-temp"
-                [lable]="'panal-temp'"
-                [lableValue]="panalTemperature + '&deg;C'"
+                [lable]="isStop ? 'machine stop' : 'panal-temp'"
+                [lableValue]="isStop ? '' : panalTemperature + '&deg;C'"
                 [lableClass]="'panal-temp-text'"
             ></app-machine-info>
             <app-machine-info
                 *ngIf="hoverObject.leftcamTemp"
                 class="left-cam"
-                [lable]="'left camera-temp'"
-                [lableValue]="leftcamTemperature + '&deg;C'"
+                [lable]="isStop ? 'machine stop' : 'left camera-temp'"
+                [lableValue]="isStop ? '' : leftcamTemperature + '&deg;C'"
                 [lableClass]="'left-cam-text'"
             ></app-machine-info>
             <app-machine-info
                 *ngIf="hoverObject.rightcamTemp"
                 class="right-cam"
-                [lable]="'right camera-temp'"
-                [lableValue]="rightcamTemperature + '&deg;C'"
+                [lable]="isStop ? 'machine stop' : 'right camera-temp'"
+                [lableValue]="isStop ? '' : rightcamTemperature + '&deg;C'"
                 [lableClass]="'right-cam-text'"
             ></app-machine-info>
             <app-machine-info
                 *ngIf="hoverObject.motorAmpere"
                 class="motor-ampere"
-                [lable]="'motor ampere'"
-                [lableValue]="motorAmpere + 'A'"
+                [lable]="isStop ? 'machine stop' : 'motor ampere'"
+                [lableValue]="isStop ? '' : motorAmpere + 'A'"
                 [lableClass]="'motor-ampere-text'"
             ></app-machine-info>
             <div class="conveyorError" *ngIf="errorArray['conveyorError']">
@@ -465,14 +459,16 @@
                 >
                     {{ cpuTemperature }} &deg;C
                 </h1>
-                CPU temperature
+                CPU
             </div>
             <div>
                 <img
                     [src]="
                         errorArray['gpuTempError']
                             ? '/assets/images/gpu-temp-error.png'
-                            : '/assets/images/gpu-temp.png'
+                            : isStop
+                            ? '/assets/images/gpu-temp.png'
+                            : '/assets/images/gpu.png'
                     "
                     width="28px"
                     alt="item"
@@ -483,14 +479,16 @@
                 >
                     {{ gpuTemperature }} &deg;C
                 </h1>
-                GPU temprature
+                GPU
             </div>
             <div>
                 <img
                     [src]="
                         errorArray['conveyorError']
                             ? '/assets/images/conveyor-error.png'
-                            : '/assets/images/conveyor.png'
+                            : isStop
+                            ? '/assets/images/conveyor.png'
+                            : '/assets/images/conveyor-belt-running.png'
                     "
                     width="28px"
                     alt="item"
@@ -503,7 +501,7 @@
                 >
                     {{ conveyorSpeed }} m/s
                 </h1>
-                conveyor-speed
+                conveyor
             </div>
             <div>
                 <img
@@ -513,37 +511,46 @@
                     loading="lazy"
                 />
                 <h1>{{ motorAmpere }} A</h1>
-                Motor Ampere
+                Motor
             </div>
             <div>
                 <img
-                    src="/assets/images/right-cam2.png"
+                    [src]="
+                        isStop
+                            ? '/assets/images/camera-off.png'
+                            : '/assets/images/camera.png'
+                    "
                     width="28px"
                     alt="item"
                     loading="lazy"
+                    class="leftSide"
                 />
                 <h1>{{ leftcamTemperature }} &deg;C</h1>
-                Left camera temperature
+                Left camera
             </div>
             <div>
                 <img
+                    [src]="
+                        isStop
+                            ? '/assets/images/camera-off.png'
+                            : '/assets/images/camera.png'
+                    "
                     width="28px"
-                    src="/assets/images/right-cam2.png"
                     alt="item"
                     loading="lazy"
                 />
                 <h1>{{ rightcamTemperature }} &deg;C</h1>
-                Right camera temperature
+                Right camera
             </div>
             <div>
                 <img
-                    src="/assets/images/panal.png"
+                    src="/assets/images/panel.png"
                     width="28px"
                     alt="item"
                     loading="lazy"
                 />
                 <h1>{{ panalTemperature }} &deg;C</h1>
-                Panal temperature
+                Panal
             </div>
             <div>
                 <img
@@ -553,8 +560,107 @@
                     loading="lazy"
                 />
                 <h1>{{ visionTemperature }} &deg;C</h1>
-                Vision temprature
+                Vision
             </div>
+        </div>
+        <!-- #2EFF00 -->
+        <div class="automationData2">
+            <!-- <img
+                src="/assets/images/count.png"
+                width="28px"
+                alt="item"
+                loading="lazy"
+            />
+            <h1>{{ ejectedCount }}</h1>
+            Eject count
+            <img
+                src="/assets/images/count.png"
+                width="28px"
+                alt="item"
+                loading="lazy"
+            />
+            <h1>{{ rejectedCount }}</h1>
+            Reject count -->
+            <div [style.background]="'red'">
+                <img
+                    [src]="
+                        errorArray['conveyorError']
+                            ? '/assets/images/conveyor-error.png'
+                            : isStop
+                            ? '/assets/images/conveyor.png'
+                            : '/assets/images/conveyor-belt-running.png'
+                    "
+                    width="28px"
+                    alt="item"
+                    loading="lazy"
+                />
+                <h1>conveyor</h1>
+            </div>
+            <img
+                [src]="
+                    errorArray['cpuTempError']
+                        ? '/assets/images/cpu-temp-error.png'
+                        : isStop
+                        ? '/assets/images/cpu.png'
+                        : '/assets/images/cpu-temp.png'
+                "
+                width="28px"
+                alt="item"
+                loading="lazy"
+            />
+            <img
+                [src]="
+                    errorArray['gpuTempError']
+                        ? '/assets/images/gpu-temp-error.png'
+                        : isStop
+                        ? '/assets/images/gpu-temp.png'
+                        : '/assets/images/gpu.png'
+                "
+                width="28px"
+                alt="item"
+                loading="lazy"
+            />
+            <img
+                [src]="
+                    isStop
+                        ? '/assets/images/camera-off.png'
+                        : '/assets/images/camera.png'
+                "
+                width="28px"
+                alt="item"
+                loading="lazy"
+            />
+            <img
+                [src]="
+                    isStop
+                        ? '/assets/images/camera-off.png'
+                        : '/assets/images/camera.png'
+                "
+                width="28px"
+                alt="item"
+                loading="lazy"
+                class="leftSide"
+            />
+            <img
+                [src]="
+                    isStop
+                        ? '/assets/images/panel-off.png'
+                        : '/assets/images/panel.png'
+                "
+                width="28px"
+                alt="item"
+                loading="lazy"
+            />
+            <img
+                [src]="
+                    isStop
+                        ? '/assets/images/vision-off.png'
+                        : '/assets/images/vision.png'
+                "
+                width="28px"
+                alt="item"
+                loading="lazy"
+            />
         </div>
         <!-- <div class="machineLog">
             <h4 class="machineLogHeading">Logs</h4>

@@ -638,15 +638,13 @@
         animation-delay: 3.3s;
         height: 30px;
     }
-    /* .containner .machineDetails .imgContainner .eject-count {
-        top: 480px;
-        left: 210px;
+    .containner .machineDetails .imgContainner .eject-count {
+        display: none;
     }
     .containner .machineDetails .imgContainner .reject-count {
-        top: 520px;
-        left: -90px;
+        display: none;
     }
-    .containner .machineDetails .imgContainner .conveyor-speed {
+    /* .containner .machineDetails .imgContainner .conveyor-speed {
         top: 80px;
         left: -50px;
     }
@@ -699,13 +697,13 @@
     .containner .machineDetails .automationData {
         display: block;
         margin: 10px;
-        background-color: #283142;
+        /* background-color: #283142; */
         display: flex;
         flex-wrap: wrap;
     }
     .containner .machineDetails .automationData div {
-        width: 40%;
-        background-color: #1b2531;
+        /* width: 40%; */
+        /* background-color: #1b2531; */
         border-radius: 5px;
         margin: 5px auto;
         text-align: center;
@@ -717,6 +715,9 @@
     }
     .containner .machineDetails .automationData img {
         margin: 4px;
+    }
+    .containner .machineDetails .automationData2 {
+        display: none;
     }
 }
 .box1 {
@@ -886,4 +887,15 @@
 .motor-ampere {
     top: -30px;
     left: 550px;
+}
+.automationData2 {
+    margin: 10px;
+    display: none;
+}
+.automationData2 img {
+    margin: 20px;
+}
+.leftSide {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }

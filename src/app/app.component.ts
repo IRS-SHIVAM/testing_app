@@ -64,10 +64,6 @@ export class AppComponent implements AfterViewInit, OnInit {
     errorArray: any = [];
     hoverObject: any = {};
     constructor() {
-        setInterval(() => {
-            this.updateEjectedValues();
-            this.updateRejectedValues();
-        }, 400);
         (window as any).initTranslate =
             this.googleTranslateElementInit.bind(this);
     }
@@ -85,24 +81,11 @@ export class AppComponent implements AfterViewInit, OnInit {
                 icon.style.display = 'none';
             }
         }, 1000);
-        setInterval(() => {
-            this.errorArray['conveyorError'] = true;
-            delete this.errorArray['cpuTempError'];
-        }, 5000);
-        setInterval(() => {
-            this.errorArray['cpuTempError'] = true;
-            this.errorArray['rightCamTempError'] = true;
-        }, 2000);
-        setInterval(() => {
-            this.errorArray['gpuTempError'] = true;
-        }, 3000);
-        setInterval(() => {
-            delete this.errorArray['conveyorError'];
-        }, 15000);
-        setInterval(() => {
-            delete this.errorArray['gpuTempError'];
-            delete this.errorArray['rightCamTempError'];
-        }, 10000);
+        if (!this.isStop) {
+            setInterval(() => {
+                this.demonstrateError();
+            }, 18000);
+        }
 
         if (window.innerWidth > 700) {
             this.hoverObject = {
@@ -110,8 +93,33 @@ export class AppComponent implements AfterViewInit, OnInit {
                 rejectCount: true,
             };
         }
+        setInterval(() => {
+            this.updateEjectedValues();
+            this.updateRejectedValues();
+        }, 800);
+    }
+    demonstrateError() {
+        setTimeout(() => {
+            this.errorArray['conveyorError'] = true;
+            delete this.errorArray['cpuTempError'];
+        }, 5000);
+        setTimeout(() => {
+            this.errorArray['cpuTempError'] = true;
+            this.errorArray['rightCamTempError'] = true;
+        }, 2000);
+        setTimeout(() => {
+            this.errorArray['gpuTempError'] = true;
+        }, 3000);
+        setTimeout(() => {
+            delete this.errorArray['conveyorError'];
+        }, 15000);
+        setTimeout(() => {
+            delete this.errorArray['gpuTempError'];
+            delete this.errorArray['rightCamTempError'];
+        }, 10000);
     }
     updateEjectedValues() {
+        console.log(1);
         this.ejectedCount += Math.floor(Math.random() * 10);
     }
     updateRejectedValues() {
@@ -125,7 +133,7 @@ export class AppComponent implements AfterViewInit, OnInit {
         // document.querySelector('.ejectCount')?.setAttribute('display', 'none');
     }
     removeAnimation() {
-        setInterval(() => {
+        setTimeout(() => {
             this.suka.classList.remove('sukaUndoScale');
         }, 2000);
         this.suka.classList.remove('sukaEjectScale');
@@ -173,6 +181,8 @@ export class AppComponent implements AfterViewInit, OnInit {
         this.cord = '';
     }
     onHover(component: any) {
+        console.log(this.hoverObject);
+
         if (window.innerWidth > 700) {
             this.hoverObject[component] = true;
         }
