@@ -527,7 +527,7 @@
         top: 110px;
         left: 230px;
     }
-    .containner .machineDetails .imgContainner .panal-temp {
+    .containner .machineDetails .imgContainner .panel-temp {
         top: 170px;
         left: 230px;
     }
@@ -656,7 +656,7 @@
         top: 310px;
         left: 130px;
     }
-    .containner .machineDetails .imgContainner .panal-temp {
+    .containner .machineDetails .imgContainner .panel-temp {
         top: 210px;
         left: -30px;
     }
@@ -718,6 +718,28 @@
     }
     .containner .machineDetails .automationData2 {
         display: none;
+    }
+    .containner .machineDetails .imgContainner .conveyorWarnError {
+        top: 38px;
+        left: 20px;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+    }
+    .containner .machineDetails .imgContainner .cpuWarnError {
+        top: 28px;
+        left: 170px;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+    }
+
+    .containner .machineDetails .imgContainner .gpuWarnError {
+        top: 58px;
+        left: 170px;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
     }
 }
 .box1 {
@@ -815,7 +837,7 @@
 .conveyor-speed,
 .cpu-temp,
 .gpu-temp,
-.panal-temp,
+.panel-temp,
 .left-cam,
 .right-cam,
 .motor-ampere,
@@ -872,7 +894,7 @@
     top: 150px;
     left: 370px;
 }
-.panal-temp {
+.panel-temp {
     top: 260px;
     left: 370px;
 }
@@ -898,4 +920,34 @@
 .leftSide {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+}
+.safe {
+    stroke: rgb(0, 255, 0);
+}
+.warning {
+    stroke: #ffd700;
+}
+.error {
+    stroke: red;
+}
+.warningDiv {
+    color: yellow;
+    background-color: yellow;
+    box-shadow: 0px 0px 5px 4px yellow, 0px 10px 15px -3px yellow;
+}
+.errorDiv {
+    color: red;
+    background-color: red;
+    box-shadow: 0px 0px 5px 4px red, 0px 10px 15px -3px red;
+}
+.conveyorWarnError {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.cpuWarnError {
+    position: absolute;
+}
+.gpuWarnError {
+    position: absolute;
 }

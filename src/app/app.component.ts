@@ -20,7 +20,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     rejectedCount: number = 124587;
     gpuTemperature: number = 65;
     cpuTemperature: number = 62;
-    panalTemperature: number = 42;
+    panelTemperature: number = 42;
     leftcamTemperature: number = 61;
     rightcamTemperature: number = 62;
     machineRunning: boolean = true;
@@ -63,6 +63,18 @@ export class AppComponent implements AfterViewInit, OnInit {
     };
     errorArray: any = [];
     hoverObject: any = {};
+
+    machinePartsState: any = {
+        conveyorBelt: 'safe',
+        cpu: 'safe',
+        gpu: 'safe',
+        panel: 'safe',
+        leftCamera: 'safe',
+        rightCamera: 'safe',
+        motor: 'safe',
+        hoodRollerMotor: 'safe',
+    };
+
     constructor() {
         (window as any).initTranslate =
             this.googleTranslateElementInit.bind(this);
@@ -97,29 +109,29 @@ export class AppComponent implements AfterViewInit, OnInit {
             this.updateEjectedValues();
             this.updateRejectedValues();
         }, 800);
+        console.log(this.filteredWarningErrorComponenets());
     }
     demonstrateError() {
         setTimeout(() => {
-            this.errorArray['conveyorError'] = true;
-            delete this.errorArray['cpuTempError'];
+            this.machinePartsState['conveyorBelt'] = 'warning';
+            this.machinePartsState['cpu'] = 'safe';
         }, 5000);
         setTimeout(() => {
-            this.errorArray['cpuTempError'] = true;
-            this.errorArray['rightCamTempError'] = true;
+            this.machinePartsState['cpu'] = 'error';
+            this.machinePartsState['rightCamera'] = 'warning';
         }, 2000);
         setTimeout(() => {
-            this.errorArray['gpuTempError'] = true;
+            this.machinePartsState['gpu'] = 'warning';
         }, 3000);
         setTimeout(() => {
-            delete this.errorArray['conveyorError'];
+            this.machinePartsState['conveyorBelt'];
         }, 15000);
         setTimeout(() => {
-            delete this.errorArray['gpuTempError'];
-            delete this.errorArray['rightCamTempError'];
+            this.machinePartsState['gpu'];
+            this.machinePartsState['rightCamera'];
         }, 10000);
     }
     updateEjectedValues() {
-        console.log(1);
         this.ejectedCount += Math.floor(Math.random() * 10);
     }
     updateRejectedValues() {
@@ -181,8 +193,6 @@ export class AppComponent implements AfterViewInit, OnInit {
         this.cord = '';
     }
     onHover(component: any) {
-        console.log(this.hoverObject);
-
         if (window.innerWidth > 700) {
             this.hoverObject[component] = true;
         }
@@ -191,5 +201,13 @@ export class AppComponent implements AfterViewInit, OnInit {
         if (window.innerWidth > 700) {
             delete this.hoverObject[component];
         }
+    }
+    filteredWarningErrorComponenets() {
+        return Object.keys(this.machinePartsState).filter((key) => {
+            return (
+                this.machinePartsState[key] == 'warning' ||
+                this.machinePartsState[key] == 'error'
+            );
+        });
     }
 }
